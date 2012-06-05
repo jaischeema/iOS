@@ -9,26 +9,47 @@
 #import "CalculatorViewController.h"
 
 @interface CalculatorViewController ()
-
+@property (nonatomic) BOOL userIsInTheMiddleOfTypingANumber;
+@property (nonatomic,strong) CalculatorBrain *brain;
 @end
 
 @implementation CalculatorViewController
 
-- (void)viewDidLoad
+@synthesize display = _display;
+@synthesize userIsInTheMiddleOfTypingANumber = _userIsInTheMiddleOfTypingANumber;
+@synthesize brain = _brain;
+
+- (CalculatorBrain *) brain
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    if( _brain == nil ) _brain = [[CalculatorBrain alloc] init];
+    return _brain;
 }
 
-- (void)viewDidUnload
+- (IBAction)digitPressed:(UIButton * )sender 
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    NSString *digit = [sender currentTitle];
+    if (self.userIsInTheMiddleOfTypingANumber) {
+        self.display.text = [self.display.text stringByAppendingString:digit];
+    }
+    else {
+        self.display.text = digit;
+        self.userIsInTheMiddleOfTypingANumber = YES;
+    }
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (IBAction)enterPressed 
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    [self.brain pushOperand:[self.display.text doubleValue]];
+    self.userIsInTheMiddleOfTypingANumber = NO;
+}
+
+- (IBAction)operationPressed:(UIButton *)sender 
+{
+    if (self.userIsInTheMiddleOfTypingANumber) {
+        [self enterPressed];
+    }
+    double result = [self.brain performOperation:sender.currentTitle ]; 
+    self.display.text = [NSString stringWithFormat:@"%g ",result];
 }
 
 @end
