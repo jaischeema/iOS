@@ -16,6 +16,8 @@
 @implementation CalculatorViewController
 
 @synthesize display = _display;
+@synthesize pointButton = _pointButton;
+@synthesize historyLabel = _historyLabel;
 @synthesize userIsInTheMiddleOfTypingANumber = _userIsInTheMiddleOfTypingANumber;
 @synthesize brain = _brain;
 
@@ -37,10 +39,18 @@
     }
 }
 
+- (void) updateHistoryLabel:(NSString *)addedText
+{
+    self.historyLabel.text = 
+        [self.historyLabel.text stringByAppendingFormat:@"%@ ", addedText];
+}
+
 - (IBAction)enterPressed 
 {
     [self.brain pushOperand:[self.display.text doubleValue]];
     self.userIsInTheMiddleOfTypingANumber = NO;
+    self.pointButton.enabled = YES;
+    [self updateHistoryLabel:self.display.text];
 }
 
 - (IBAction)operationPressed:(UIButton *)sender 
@@ -48,8 +58,31 @@
     if (self.userIsInTheMiddleOfTypingANumber) {
         [self enterPressed];
     }
-    double result = [self.brain performOperation:sender.currentTitle ]; 
+    double result = [self.brain performOperation:sender.currentTitle ];
+    [self updateHistoryLabel:sender.currentTitle];
     self.display.text = [NSString stringWithFormat:@"%g ",result];
 }
+
+- (IBAction)pointPressed
+{
+    if (self.userIsInTheMiddleOfTypingANumber) {
+        
+        self.display.text = [self.display.text stringByAppendingString:@"."];
+    }
+    else {
+        self.display.text = @"0.";
+        self.userIsInTheMiddleOfTypingANumber = YES;
+    }
+    self.pointButton.enabled = NO;
+}
+
+- (IBAction)clearPressed 
+{
+    [self.brain clear];
+    self.display.text = @"0";
+    self.historyLabel.text = @"";
+    self.userIsInTheMiddleOfTypingANumber = NO;
+}
+
 
 @end
