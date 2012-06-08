@@ -121,7 +121,7 @@
     variablesInProgram = [self variablesUsedInProgram:program];
     if(variablesInProgram == nil)
     {
-        return [stack mutableCopy];
+        return [programAsArray mutableCopy];
     }
     else {
         for(id operand in programAsArray)
