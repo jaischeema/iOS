@@ -14,7 +14,7 @@
 
 - (void) pushOperand:(double)operand;
 - (void) pushVariable:(NSString *)variable;
-- (double) performOperation:(NSString *)operation;
+- (double) performOperation:(NSString *)operation withVariableValues:(NSDictionary *)variableValues;
 - (void) clear;
 
 + (double) runProgram:(id)program;
