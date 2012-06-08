@@ -35,6 +35,11 @@
     [self.programStack addObject:[NSNumber numberWithDouble:operand]];
 }
 
+- (void) pushVariable:(NSString *)variable
+{
+    [self.programStack addObject:variable];
+}
+
 - (double) performOperation:(NSString *)operation
 {
     [self.programStack addObject:operation];
@@ -114,6 +119,23 @@
         stack = [program mutableCopy];
     }
     return [self popOperandOffStack:stack];
+}
+
++ (double) runProgram:(id)program usingVariableValues:(NSDictionary *)variableValues
+{
+    return [self runProgram:program];
+}
+
++ (NSSet *) variablesUsedInProgram:(id)program
+{
+    NSMutableSet *variables = [[NSMutableSet alloc] init];
+    if(variables.count == 0)
+    {
+        return nil;
+    }
+    else{
+        return [variables copy];
+    }
 }
 
 - (void) clear

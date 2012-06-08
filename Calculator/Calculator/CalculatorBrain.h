@@ -13,10 +13,13 @@
 @property (readonly) id program;
 
 - (void) pushOperand:(double)operand;
+- (void) pushVariable:(NSString *)variable;
 - (double) performOperation:(NSString *)operation;
 - (void) clear;
 
 + (double) runProgram:(id)program;
++ (double) runProgram:(id)program usingVariableValues:(NSDictionary *)variableValues;
++ (NSSet *) variablesUsedInProgram:(id)program;
 + (NSString *) descriptionOfProgram:(id)program;
 
 @end

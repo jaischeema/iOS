@@ -17,7 +17,8 @@
 
 @synthesize display = _display;
 @synthesize pointButton = _pointButton;
-@synthesize historyLabel = _historyLabel;
+@synthesize descriptionDisplay = _descriptionDisplay;
+@synthesize variableValueDisplay = _variableValueDisplay;
 @synthesize userIsInTheMiddleOfTypingANumber = _userIsInTheMiddleOfTypingANumber;
 @synthesize brain = _brain;
 
@@ -41,8 +42,8 @@
 
 - (void) updateHistoryLabel:(NSString *)addedText
 {
-    self.historyLabel.text = 
-        [self.historyLabel.text stringByAppendingFormat:@"%@ ", addedText];
+    self.descriptionDisplay.text = 
+        [self.descriptionDisplay.text stringByAppendingFormat:@"%@ ", addedText];
 }
 
 - (IBAction)enterPressed 
@@ -80,9 +81,20 @@
 {
     [self.brain clear];
     self.display.text = @"0";
-    self.historyLabel.text = @"";
+    self.descriptionDisplay.text = @"";
     self.userIsInTheMiddleOfTypingANumber = NO;
 }
 
+- (IBAction)variablePressed:(id)sender 
+{
+}
+
+- (IBAction)undoPressed 
+{
+}
+
+- (IBAction)testPressed:(id)sender 
+{
+}
 
 @end
