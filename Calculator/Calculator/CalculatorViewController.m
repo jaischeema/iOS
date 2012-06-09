@@ -55,8 +55,8 @@
 
 - (void) updateHistoryLabel:(NSString *)addedText
 {
-    self.descriptionDisplay.text = 
-        [self.descriptionDisplay.text stringByAppendingFormat:@"%@ ", addedText];
+    self.descriptionDisplay.text = [CalculatorBrain descriptionOfProgram:self.brain.program];
+        //[self.descriptionDisplay.text stringByAppendingFormat:@"%@ ", addedText];
 }
 
 - (IBAction)enterPressed 

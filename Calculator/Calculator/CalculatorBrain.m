@@ -44,9 +44,74 @@
     return [CalculatorBrain runProgram:self.program usingVariableValues:variableValues];
 }
 
++ (NSString *) descriptionForLastOperand:(NSMutableArray *)stack
+{
+    NSString *description;
+    NSArray *operations = [[NSArray alloc] initWithObjects:@"+",@"-",@"*",@"/",@"sin",@"cos",@"sqrt", nil];
+    
+    id topOfStack = [stack lastObject];
+    if (topOfStack) [stack removeLastObject];
+    
+    if([topOfStack isKindOfClass:[NSNumber class]])
+    {
+        description = [topOfStack description];
+    }
+    else if([topOfStack isKindOfClass:[NSString class]])
+    {
+        NSString *operation = topOfStack;
+        if ([operations containsObject:operation]) {
+            if([operation isEqualToString:@"+"])
+            {
+                description = [NSString stringWithFormat:@"%@ + %@",[self descriptionForLastOperand:stack], [self descriptionForLastOperand:stack]];
+            }
+            else if([operation isEqualToString:@"-"])
+            {
+                NSString *substractorDescription = [self descriptionForLastOperand:stack];
+                description = [NSString stringWithFormat:@"%@ - %@",[self descriptionForLastOperand:stack], substractorDescription];
+            }
+            else if([operation isEqualToString:@"*"])
+            {
+                NSString *multiplierOneDescription = [self descriptionForLastOperand:stack];
+                
+                description = [NSString stringWithFormat:@"(%@) * %@",[self descriptionForLastOperand:stack], multiplierOneDescription];
+            }
+            else if([operation isEqualToString:@"/"])
+            {
+                NSString *divisorDescription = [self descriptionForLastOperand:stack];
+                description = [NSString stringWithFormat:@"(%@) / %@",[self descriptionForLastOperand:stack], divisorDescription];
+            }
+            else if([operation isEqualToString:@"sin"])
+            {
+                description = [NSString stringWithFormat:@"sin(%@)",[self descriptionForLastOperand:stack]];
+            }
+            else if([operation isEqualToString:@"cos"])
+            {
+                description = [NSString stringWithFormat:@"cos(%@)",[self descriptionForLastOperand:stack]];
+            }
+            else if([operation isEqualToString:@"sqrt"])
+            {
+                description = [NSString stringWithFormat:@"sqrt(%@)",[self descriptionForLastOperand:stack]];
+            }
+            else {
+                description = @"undef";
+            }
+        }
+        else {
+            return operation;
+        }
+    }
+    return description;
+}
+
 + (NSString *) descriptionOfProgram:(id)program
 {
-    return @"Description of the program";
+    NSMutableArray *stack;
+    if ([program isKindOfClass:[NSArray class]])
+    {
+        stack = [program mutableCopy];
+    }
+
+    return [self descriptionForLastOperand:stack];
 }
 
 + (double) popOperandOffStack:(NSMutableArray *)stack
