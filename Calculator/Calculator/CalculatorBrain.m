@@ -44,9 +44,21 @@
     return [CalculatorBrain runProgram:self.program usingVariableValues:variableValues];
 }
 
-+ (NSString *) descriptionForLastOperand:(NSMutableArray *)stack
++ (NSString *) formatDescription:(id)object
 {
     NSString *description;
+    if ([object isKindOfClass:[NSString class]]) {
+        description = [NSString stringWithFormat:@"( %@ )",object];
+    }
+    else {
+        description = [object description];
+    }
+    return description;
+}
+
++ (id) popOperandForDescription:(NSMutableArray *)stack
+{
+    id description;
     NSArray *operations = [[NSArray alloc] initWithObjects:@"+",@"-",@"*",@"/",@"sin",@"cos",@"sqrt", nil];
     
     id topOfStack = [stack lastObject];
@@ -54,7 +66,7 @@
     
     if([topOfStack isKindOfClass:[NSNumber class]])
     {
-        description = [topOfStack description];
+        description = topOfStack;
     }
     else if([topOfStack isKindOfClass:[NSString class]])
     {
@@ -62,43 +74,46 @@
         if ([operations containsObject:operation]) {
             if([operation isEqualToString:@"+"])
             {
-                description = [NSString stringWithFormat:@"%@ + %@",[self descriptionForLastOperand:stack], [self descriptionForLastOperand:stack]];
+                id obj = [self popOperandForDescription:stack];
+                description = [NSString stringWithFormat:@" %@ + %@ ",[self popOperandForDescription:stack], obj];
             }
             else if([operation isEqualToString:@"-"])
             {
-                NSString *substractorDescription = [self descriptionForLastOperand:stack];
-                description = [NSString stringWithFormat:@"%@ - %@",[self descriptionForLastOperand:stack], substractorDescription];
+                id obj = [self popOperandForDescription:stack];
+                description = [NSString stringWithFormat:@" %@ - %@ ",[self popOperandForDescription:stack], obj];
             }
             else if([operation isEqualToString:@"*"])
             {
-                NSString *multiplierOneDescription = [self descriptionForLastOperand:stack];
-                
-                description = [NSString stringWithFormat:@"(%@) * %@",[self descriptionForLastOperand:stack], multiplierOneDescription];
+                id obj = [self popOperandForDescription:stack];
+                description = [NSString stringWithFormat:@" %@ * %@ ",[self formatDescription:[self popOperandForDescription:stack]], [self formatDescription:obj]];
             }
             else if([operation isEqualToString:@"/"])
             {
-                NSString *divisorDescription = [self descriptionForLastOperand:stack];
-                description = [NSString stringWithFormat:@"(%@) / %@",[self descriptionForLastOperand:stack], divisorDescription];
+                id obj = [self popOperandForDescription:stack];
+                description = [NSString stringWithFormat:@" %@ / %@ ",[self formatDescription:[self popOperandForDescription:stack]], [self formatDescription:obj]];
             }
             else if([operation isEqualToString:@"sin"])
             {
-                description = [NSString stringWithFormat:@"sin(%@)",[self descriptionForLastOperand:stack]];
+                description = [NSString stringWithFormat:@" sin %@ ",[self formatDescription:[self popOperandForDescription:stack]]];
             }
             else if([operation isEqualToString:@"cos"])
             {
-                description = [NSString stringWithFormat:@"cos(%@)",[self descriptionForLastOperand:stack]];
+                description = [NSString stringWithFormat:@" cos %@ ",[self formatDescription:[self popOperandForDescription:stack]]];
             }
             else if([operation isEqualToString:@"sqrt"])
             {
-                description = [NSString stringWithFormat:@"sqrt(%@)",[self descriptionForLastOperand:stack]];
+                description = [NSString stringWithFormat:@" sqrt %@ ",[self formatDescription:[self popOperandForDescription:stack]]];
             }
             else {
                 description = @"undef";
             }
         }
         else {
-            return operation;
+            description = operation;
         }
+    }
+    else {
+        description = [NSNumber numberWithDouble:0.0];
     }
     return description;
 }
@@ -111,7 +126,7 @@
         stack = [program mutableCopy];
     }
 
-    return [self descriptionForLastOperand:stack];
+    return [[self popOperandForDescription:stack] description];
 }
 
 + (double) popOperandOffStack:(NSMutableArray *)stack
