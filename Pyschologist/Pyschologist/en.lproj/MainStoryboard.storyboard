@@ -73,7 +73,7 @@
                     <navigationItem key="navigationItem" title="Dr. Phill" id="9ar-tX-j1J"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="139" y="-1057"/>
+            <point key="canvasLocation" x="-401" y="-1113"/>
         </scene>
         <!--View Controller - Pyschologist-->
         <scene sceneID="reH-fE-soD">
@@ -120,7 +120,7 @@
                     <navigationItem key="navigationItem" title="Pyschologist" id="rcf-RC-Yo4"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-385" y="-178"/>
+            <point key="canvasLocation" x="-1059" y="-670"/>
         </scene>
         <!--Pyschologist View Controller - Dr Freud-->
         <scene sceneID="5">
@@ -192,7 +192,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="363" y="-24"/>
+            <point key="canvasLocation" x="-401" y="-208"/>
         </scene>
         <!--Happiness View Controller - Diagnosis-->
         <scene sceneID="PwU-HK-VRL">
@@ -217,7 +217,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="850" y="-24"/>
+            <point key="canvasLocation" x="256" y="-208"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HTP-bY-RJy">
@@ -235,7 +235,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1093" y="-178"/>
+            <point key="canvasLocation" x="-1663" y="-670"/>
         </scene>
         <!--Happiness View Controller - Diagnosis-->
         <scene sceneID="SoE-n8-Yz3">
@@ -260,7 +260,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1382" y="-430"/>
+            <point key="canvasLocation" x="256" y="-818"/>
         </scene>
         <!--Happiness View Controller - Diagnosis-->
         <scene sceneID="McE-p0-8nS">
@@ -297,7 +297,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1040" y="-886"/>
+            <point key="canvasLocation" x="732" y="-1113"/>
         </scene>
         <!--Happiness View Controller - Diagnosis-->
         <scene sceneID="vxT-Tz-pWg">
@@ -322,7 +322,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="696" y="-1328"/>
+            <point key="canvasLocation" x="256" y="-1474"/>
         </scene>
     </scenes>
     <classes>
