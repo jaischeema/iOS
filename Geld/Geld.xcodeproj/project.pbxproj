@@ -15,6 +15,7 @@
 		23989D6F1586EA6D00D1BFAB /* GeldAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D6E1586EA6D00D1BFAB /* GeldAppDelegate.m */; };
 		23989D721586EA6D00D1BFAB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23989D701586EA6D00D1BFAB /* MainStoryboard.storyboard */; };
 		23989D751586EA6D00D1BFAB /* GeldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D741586EA6D00D1BFAB /* GeldViewController.m */; };
+		23989D7D1586ECD700D1BFAB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D7C1586ECD700D1BFAB /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		23989D711586EA6D00D1BFAB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		23989D731586EA6D00D1BFAB /* GeldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeldViewController.h; sourceTree = "<group>"; };
 		23989D741586EA6D00D1BFAB /* GeldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeldViewController.m; sourceTree = "<group>"; };
+		23989D7B1586ECD700D1BFAB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		23989D7C1586ECD700D1BFAB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				23989D731586EA6D00D1BFAB /* GeldViewController.h */,
 				23989D741586EA6D00D1BFAB /* GeldViewController.m */,
 				23989D651586EA6D00D1BFAB /* Supporting Files */,
+				23989D7B1586ECD700D1BFAB /* LoginViewController.h */,
+				23989D7C1586ECD700D1BFAB /* LoginViewController.m */,
 			);
 			path = Geld;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				23989D6B1586EA6D00D1BFAB /* main.m in Sources */,
 				23989D6F1586EA6D00D1BFAB /* GeldAppDelegate.m in Sources */,
 				23989D751586EA6D00D1BFAB /* GeldViewController.m in Sources */,
+				23989D7D1586ECD700D1BFAB /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
