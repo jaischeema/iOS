@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23989D5F1586EA6D00D1BFAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23989D5E1586EA6D00D1BFAB /* UIKit.framework */; };
+		23989D611586EA6D00D1BFAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23989D601586EA6D00D1BFAB /* Foundation.framework */; };
+		23989D631586EA6D00D1BFAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23989D621586EA6D00D1BFAB /* CoreGraphics.framework */; };
+		23989D691586EA6D00D1BFAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23989D671586EA6D00D1BFAB /* InfoPlist.strings */; };
+		23989D6B1586EA6D00D1BFAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D6A1586EA6D00D1BFAB /* main.m */; };
+		23989D6F1586EA6D00D1BFAB /* GeldAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D6E1586EA6D00D1BFAB /* GeldAppDelegate.m */; };
+		23989D721586EA6D00D1BFAB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23989D701586EA6D00D1BFAB /* MainStoryboard.storyboard */; };
+		23989D751586EA6D00D1BFAB /* GeldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D741586EA6D00D1BFAB /* GeldViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		23989D5A1586EA6D00D1BFAB /* Geld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23989D5E1586EA6D00D1BFAB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		23989D601586EA6D00D1BFAB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		23989D621586EA6D00D1BFAB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		23989D661586EA6D00D1BFAB /* Geld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Geld-Info.plist"; sourceTree = "<group>"; };
+		23989D681586EA6D00D1BFAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		23989D6A1586EA6D00D1BFAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		23989D6C1586EA6D00D1BFAB /* Geld-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Geld-Prefix.pch"; sourceTree = "<group>"; };
+		23989D6D1586EA6D00D1BFAB /* GeldAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeldAppDelegate.h; sourceTree = "<group>"; };
+		23989D6E1586EA6D00D1BFAB /* GeldAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeldAppDelegate.m; sourceTree = "<group>"; };
+		23989D711586EA6D00D1BFAB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		23989D731586EA6D00D1BFAB /* GeldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeldViewController.h; sourceTree = "<group>"; };
+		23989D741586EA6D00D1BFAB /* GeldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeldViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23989D571586EA6D00D1BFAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23989D5F1586EA6D00D1BFAB /* UIKit.framework in Frameworks */,
+				23989D611586EA6D00D1BFAB /* Foundation.framework in Frameworks */,
+				23989D631586EA6D00D1BFAB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23989D4F1586EA6D00D1BFAB = {
+			isa = PBXGroup;
+			children = (
+				23989D641586EA6D00D1BFAB /* Geld */,
+				23989D5D1586EA6D00D1BFAB /* Frameworks */,
+				23989D5B1586EA6D00D1BFAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		23989D5B1586EA6D00D1BFAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23989D5A1586EA6D00D1BFAB /* Geld.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23989D5D1586EA6D00D1BFAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23989D5E1586EA6D00D1BFAB /* UIKit.framework */,
+				23989D601586EA6D00D1BFAB /* Foundation.framework */,
+				23989D621586EA6D00D1BFAB /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23989D641586EA6D00D1BFAB /* Geld */ = {
+			isa = PBXGroup;
+			children = (
+				23989D6D1586EA6D00D1BFAB /* GeldAppDelegate.h */,
+				23989D6E1586EA6D00D1BFAB /* GeldAppDelegate.m */,
+				23989D701586EA6D00D1BFAB /* MainStoryboard.storyboard */,
+				23989D731586EA6D00D1BFAB /* GeldViewController.h */,
+				23989D741586EA6D00D1BFAB /* GeldViewController.m */,
+				23989D651586EA6D00D1BFAB /* Supporting Files */,
+			);
+			path = Geld;
+			sourceTree = "<group>";
+		};
+		23989D651586EA6D00D1BFAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				23989D661586EA6D00D1BFAB /* Geld-Info.plist */,
+				23989D671586EA6D00D1BFAB /* InfoPlist.strings */,
+				23989D6A1586EA6D00D1BFAB /* main.m */,
+				23989D6C1586EA6D00D1BFAB /* Geld-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23989D591586EA6D00D1BFAB /* Geld */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23989D781586EA6D00D1BFAB /* Build configuration list for PBXNativeTarget "Geld" */;
+			buildPhases = (
+				23989D561586EA6D00D1BFAB /* Sources */,
+				23989D571586EA6D00D1BFAB /* Frameworks */,
+				23989D581586EA6D00D1BFAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Geld;
+			productName = Geld;
+			productReference = 23989D5A1586EA6D00D1BFAB /* Geld.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		23989D511586EA6D00D1BFAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Geld;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = CyberSecure;
+			};
+			buildConfigurationList = 23989D541586EA6D00D1BFAB /* Build configuration list for PBXProject "Geld" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 23989D4F1586EA6D00D1BFAB;
+			productRefGroup = 23989D5B1586EA6D00D1BFAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23989D591586EA6D00D1BFAB /* Geld */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23989D581586EA6D00D1BFAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23989D691586EA6D00D1BFAB /* InfoPlist.strings in Resources */,
+				23989D721586EA6D00D1BFAB /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23989D561586EA6D00D1BFAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23989D6B1586EA6D00D1BFAB /* main.m in Sources */,
+				23989D6F1586EA6D00D1BFAB /* GeldAppDelegate.m in Sources */,
+				23989D751586EA6D00D1BFAB /* GeldViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		23989D671586EA6D00D1BFAB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23989D681586EA6D00D1BFAB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		23989D701586EA6D00D1BFAB /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23989D711586EA6D00D1BFAB /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		23989D761586EA6D00D1BFAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		23989D771586EA6D00D1BFAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		23989D791586EA6D00D1BFAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Geld/Geld-Prefix.pch";
+				INFOPLIST_FILE = "Geld/Geld-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		23989D7A1586EA6D00D1BFAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Geld/Geld-Prefix.pch";
+				INFOPLIST_FILE = "Geld/Geld-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23989D541586EA6D00D1BFAB /* Build configuration list for PBXProject "Geld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23989D761586EA6D00D1BFAB /* Debug */,
+				23989D771586EA6D00D1BFAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23989D781586EA6D00D1BFAB /* Build configuration list for PBXNativeTarget "Geld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23989D791586EA6D00D1BFAB /* Debug */,
+				23989D7A1586EA6D00D1BFAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 23989D511586EA6D00D1BFAB /* Project object */;
+}
