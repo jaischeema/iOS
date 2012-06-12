@@ -14,6 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *display;
 @property (weak, nonatomic) IBOutlet UIButton *pointButton;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionDisplay;
-@property (weak, nonatomic) IBOutlet UILabel *variableValueDisplay;
 
 @end

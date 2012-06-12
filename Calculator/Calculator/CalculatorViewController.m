@@ -19,7 +19,6 @@
 @synthesize display = _display;
 @synthesize pointButton = _pointButton;
 @synthesize descriptionDisplay = _descriptionDisplay;
-@synthesize variableValueDisplay = _variableValueDisplay;
 @synthesize userIsInTheMiddleOfTypingANumber = _userIsInTheMiddleOfTypingANumber;
 @synthesize brain = _brain;
 @synthesize testVariableValues = _testVariableValues;
@@ -97,61 +96,13 @@
     self.descriptionDisplay.text = @"";
     self.testVariableValues = nil;
     self.userIsInTheMiddleOfTypingANumber = NO;
-    [self updateVariableDisplay];
 }
 
-- (void) updateVariableDisplay
-{
-    NSSet *variables = [CalculatorBrain variablesUsedInProgram:self.brain.program];
-    NSMutableString *displayText = [[NSMutableString alloc] init];
-    for(id variable in variables)
-    {
-        if([variable isKindOfClass:[NSString class]])
-        {
-            id obj = [self.testVariableValues objectForKey:variable];
-            double value = 0; 
-            if ([obj isKindOfClass:[NSNumber class]]) {
-                value = [obj doubleValue];
-            }
-            [displayText appendFormat:@"%@ = %g   ",variable, value];
-        }
-    }
-    self.variableValueDisplay.text = displayText;
-}
 
 - (IBAction)variablePressed:(UIButton *)sender 
 {
     [self.brain pushVariable:sender.currentTitle];
     [self enterPressed];
-    [self updateVariableDisplay];
-}
-
-- (IBAction)undoPressed 
-{
-}
-
-- (IBAction)testPressed:(UIButton *)sender 
-{
-    NSString *title = [sender currentTitle];
-    if([title isEqualToString:@"Test 1"])
-    {
-        [self.testVariableValues setObject:[NSNumber numberWithInt:1] forKey:@"x"];
-        [self.testVariableValues setObject:[NSNumber numberWithInt:10] forKey:@"a"];
-        [self.testVariableValues setObject:[NSNumber numberWithInt:20] forKey:@"b"];
-    }
-    else if([title isEqualToString:@"Test 2"])
-    {
-        [self.testVariableValues setObject:[NSNumber numberWithInt:100] forKey:@"x"];
-        [self.testVariableValues setObject:[NSNumber numberWithInt:20] forKey:@"a"];
-        [self.testVariableValues setObject:[NSNumber numberWithInt:-10] forKey:@"b"];
-    }
-    else if([title isEqualToString:@"Test 3"])
-    {
-        [self.testVariableValues setObject:[NSNumber numberWithInt:0] forKey:@"x"];
-        [self.testVariableValues setObject:[NSNumber numberWithInt:-200] forKey:@"a"];
-        [self.testVariableValues setObject:[NSNumber numberWithInt:-1000] forKey:@"b"];
-    }
-    [self updateVariableDisplay];
 }
 
 @end
