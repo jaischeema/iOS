@@ -32,10 +32,23 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-     if([segue.identifier isEqualToString:@"ShowDiagnosis"] )
-     {
-         [segue.destinationViewController setHappiness:self.diagnosis];
-     }
+    if([segue.identifier isEqualToString:@"ShowDiagnosis"] )
+    {
+        [segue.destinationViewController setHappiness:self.diagnosis];
+    }
+    else if([segue.identifier isEqualToString:@"Serious"])
+    {
+        [segue.destinationViewController setHappiness:20.0];
+    }
+    else if([segue.identifier isEqualToString:@"TV Kook"])
+    {
+        [segue.destinationViewController setHappiness:50.0];
+    }
+    else if([segue.identifier isEqualToString:@"Celebrity"])
+    {
+        [segue.destinationViewController setHappiness:100];
+    }
+
 }
 
 - (IBAction)flying 
