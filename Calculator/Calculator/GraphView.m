@@ -69,7 +69,7 @@
 
 - (CGPoint) pointFor:(CGFloat)x
 {
-    return CGPointMake(self.origin.x + x, self.origin.y - [self.delegate valueOfGraphAt:x]);
+    return CGPointMake(self.origin.x + ( x * self.scale ), self.origin.y - ( self.scale * [self.delegate valueOfGraphAt:x]));
 }
 
 - (void)drawRect:(CGRect)rect
@@ -79,13 +79,13 @@
     [AxesDrawer drawAxesInRect:self.bounds originAtPoint:self.origin scale:self.scale];
 
     // Calculate the minimum x value in points
-    CGFloat minX = self.origin.x - (self.origin.x * 2);
+    CGFloat minX = ( self.origin.x - (self.origin.x * 2) ) / self.scale;
     
     // Calculate the maximum x value in points
-    CGFloat maxX = self.bounds.size.width - self.origin.x;
+    CGFloat maxX = ( self.bounds.size.width - self.origin.x ) / self.scale;
     
     // Calculate the number of pixels per point
-    CGFloat ppp = 1/self.contentScaleFactor;
+    CGFloat ppp = 1 / ( self.contentScaleFactor * self.scale);
     
     CGContextBeginPath(context);
     CGPoint startingPoint = [self pointFor:minX];
@@ -95,11 +95,11 @@
     {
         CGPoint currentPoint = [self pointFor:i];
         CGContextAddLineToPoint(context, currentPoint.x, currentPoint.y);
-        NSLog(@"%g",i);
     }
     CGContextStrokePath(context);
     // draw the point then
 }
+
 
 /* Gesture recognisers */
 - (void) pinch:(UIPinchGestureRecognizer *)gesture
