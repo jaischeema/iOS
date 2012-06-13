@@ -30,12 +30,8 @@
     {
         NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
         if( _splitViewBarButton ) [toolbarItems removeObject:_splitViewBarButton];
-        
-        if(splitViewBarButton)
-        {
-            [toolbarItems addObject:splitViewBarButton];
-            _splitViewBarButton = splitViewBarButton;
-        }
+        if(splitViewBarButton) [toolbarItems addObject:splitViewBarButton];
+        _splitViewBarButton = splitViewBarButton;
         self.toolbar.items = toolbarItems;
     }
 }

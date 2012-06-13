@@ -34,6 +34,11 @@
     {
         _scale = scale;
         [self setNeedsDisplay];
+        NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        if(standardUserDefaults) 
+        {
+            [standardUserDefaults setDouble:scale forKey:@"scale"];
+        }
     }
 }
 
@@ -43,14 +48,32 @@
     {
         _origin = origin;
         [self setNeedsDisplay];
+        NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        if(standardUserDefaults) 
+        {
+            [standardUserDefaults setDouble:origin.x forKey:@"origin_x"];
+            [standardUserDefaults setDouble:origin.y forKey:@"origin_y"];
+        }
     }
 }
 
 - (void) setup
 {
     self.contentMode = UIViewContentModeRedraw;
-    _origin = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
-    
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    if(standardUserDefaults) 
+    {
+        double x = [standardUserDefaults doubleForKey:@"origin_x"];
+        double y = [standardUserDefaults doubleForKey:@"origin_y"];
+        if( x && y )
+        {
+            self.origin = CGPointMake(x,y);
+        }
+        else {
+            self.origin = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+        }
+        self.scale = [standardUserDefaults doubleForKey:@"scale"];
+    }
 }
 
 - (id)initWithFrame:(CGRect)frame

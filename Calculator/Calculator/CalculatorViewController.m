@@ -22,6 +22,11 @@
 @synthesize userIsInTheMiddleOfTypingANumber = _userIsInTheMiddleOfTypingANumber;
 @synthesize brain = _brain;
 
+- (void) viewDidLoad
+{
+    self.title = @"Calculator";
+}
+
 - (CalculatorBrain *) brain
 {
     if( _brain == nil ) _brain = [[CalculatorBrain alloc] init];
