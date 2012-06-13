@@ -8,14 +8,28 @@
 
 #import "GraphViewController.h"
 #import "GraphView.h"
+#import "CalculatorBrain.h"
 
 @interface GraphViewController () <GraphViewDataSource>
-@property (weak, nonatomic) IBOutlet GraphView *graphView;
+@property (strong, nonatomic) IBOutlet GraphView *graphView;
+@property (strong, nonatomic) IBOutlet UILabel *expressionDisplay;
 @end
 
 @implementation GraphViewController
 
 @synthesize graphView = _graphView;
+@synthesize expressionDisplay = _expressionDisplay;
+@synthesize program = _program;
+
+- (void) viewDidLoad
+{
+    self.expressionDisplay.text = [CalculatorBrain descriptionOfProgram:self.program];
+}
+
+- (void) setProgram:(id)program
+{
+    _program = program;
+}
 
 - (void) setGraphView:(GraphView *)graphView
 {
@@ -30,7 +44,9 @@
 
 - (CGFloat)valueOfGraphAt:(CGFloat)x;
 {
-    return ( x * x ) / 30;
+    NSDictionary *values = 
+        [NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:x] forKey:@"x"];
+    return [CalculatorBrain runProgram:self.program usingVariableValues:values];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

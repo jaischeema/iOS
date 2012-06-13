@@ -7,6 +7,7 @@
 //
 
 #import "CalculatorViewController.h"
+#import "GraphViewController.h"
 
 @interface CalculatorViewController ()
 @property (nonatomic) BOOL userIsInTheMiddleOfTypingANumber;
@@ -60,7 +61,10 @@
 
 - (IBAction)enterPressed 
 {
-    [self.brain pushOperand:[self.display.text doubleValue]];
+    if(self.userIsInTheMiddleOfTypingANumber)
+    {
+        [self.brain pushOperand:[self.display.text doubleValue]];
+    }
     self.userIsInTheMiddleOfTypingANumber = NO;
     self.pointButton.enabled = YES;
     [self updateHistoryLabel:self.display.text];
@@ -103,6 +107,14 @@
 {
     [self.brain pushVariable:sender.currentTitle];
     [self enterPressed];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"Graph"])
+    {
+        [segue.destinationViewController setProgram:self.brain.program];
+    }
 }
 
 @end

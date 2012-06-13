@@ -371,7 +371,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Mel-Ca-fgz" kind="push" id="egt-zg-N9S"/>
+                                    <segue destination="Mel-Ca-fgz" kind="push" identifier="Graph" id="PKy-40-9vC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -417,6 +417,16 @@
                             <view contentMode="scaleToFill" id="VPx-GF-scV" customClass="GraphView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Something" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="6DF-Kk-ZKC">
+                                        <rect key="frame" x="20" y="375" width="280" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.23936400041672762" green="0.17092133617131511" blue="0.26942510190217395" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.7619288708973162" green="1" blue="0.19119311831312602" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.61327372522193246" green="0.63874080256949828" blue="0.69204313858695654" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -424,6 +434,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Graph" id="7Z7-w0-JbI"/>
                     <connections>
+                        <outlet property="expressionDisplay" destination="6DF-Kk-ZKC" id="SuP-nQ-YDe"/>
                         <outlet property="graphView" destination="VPx-GF-scV" id="YVs-4B-oR4"/>
                     </connections>
                 </viewController>
@@ -446,6 +457,7 @@
         <class className="GraphViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="expressionDisplay" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="graphView" candidateClass="GraphView"/>
             </relationships>
         </class>
