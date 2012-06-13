@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GraphViewDelegate
+- (CGFloat)valueOfYCoordinateFor:(CGFloat)x;
+@end
+
 @interface GraphView : UIView
 
+@property (nonatomic, weak) id <GraphViewDelegate> delegate;
 @end
