@@ -9,7 +9,7 @@
 #import "GraphViewController.h"
 #import "GraphView.h"
 
-@interface GraphViewController () <GraphViewDelegate>
+@interface GraphViewController () <GraphViewDataSource>
 @property (weak, nonatomic) IBOutlet GraphView *graphView;
 @end
 
@@ -23,14 +23,14 @@
     self.graphView.delegate = self;
     [self.graphView addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self.graphView action:@selector(pinch:)]];
     [self.graphView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self.graphView action:@selector(pan:)]];
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self.graphView action:@selector(tap:)];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self.graphView action:@selector(threeTaps:)];
     tapGesture.numberOfTapsRequired = 3;
     [self.graphView addGestureRecognizer:tapGesture];
 }
 
-- (CGFloat)valueOfYCoordinateFor:(CGFloat)x;
+- (CGFloat)valueOfGraphAt:(CGFloat)x;
 {
-    return 2.0;
+    return ( x * x ) / 30;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

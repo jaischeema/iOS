@@ -10,8 +10,6 @@
 #import "AxesDrawer.h"
 
 @interface GraphView()
-@property (nonatomic) CGFloat scale;
-@property (nonatomic) CGPoint origin;
 @end
 
 @implementation GraphView
@@ -69,9 +67,38 @@
     [self setup];
 }
 
+- (CGPoint) pointFor:(CGFloat)x
+{
+    return CGPointMake(self.origin.x + x, self.origin.y - [self.delegate valueOfGraphAt:x]);
+}
+
 - (void)drawRect:(CGRect)rect
 {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
     [AxesDrawer drawAxesInRect:self.bounds originAtPoint:self.origin scale:self.scale];
+
+    // Calculate the minimum x value in points
+    CGFloat minX = self.origin.x - (self.origin.x * 2);
+    
+    // Calculate the maximum x value in points
+    CGFloat maxX = self.bounds.size.width - self.origin.x;
+    
+    // Calculate the number of pixels per point
+    CGFloat ppp = 1/self.contentScaleFactor;
+    
+    CGContextBeginPath(context);
+    CGPoint startingPoint = [self pointFor:minX];
+    CGContextMoveToPoint(context, startingPoint.x, startingPoint.y);
+    // go from min x to max x incrementing by (point/pixelperpoint) ( 1/3 = 0.33 )
+    for(double i = minX; i <= maxX; i += ppp)
+    {
+        CGPoint currentPoint = [self pointFor:i];
+        CGContextAddLineToPoint(context, currentPoint.x, currentPoint.y);
+        NSLog(@"%g",i);
+    }
+    CGContextStrokePath(context);
+    // draw the point then
 }
 
 /* Gesture recognisers */
@@ -96,7 +123,7 @@
 
 }
 
-- (void) tap:(UITapGestureRecognizer *)gesture
+- (void) threeTaps:(UITapGestureRecognizer *)gesture
 {
     if(gesture.state == UIGestureRecognizerStateChanged || gesture.state == UIGestureRecognizerStateEnded)
     {
