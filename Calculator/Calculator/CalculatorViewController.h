@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CalculatorBrain.h"
+#import "RotatingViewController.h"
 
-@interface CalculatorViewController : UIViewController
+@interface CalculatorViewController : RotatingViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *display;
 @property (weak, nonatomic) IBOutlet UIButton *pointButton;

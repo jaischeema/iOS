@@ -12,7 +12,6 @@
 @interface CalculatorViewController ()
 @property (nonatomic) BOOL userIsInTheMiddleOfTypingANumber;
 @property (nonatomic,strong) CalculatorBrain *brain;
-@property (nonatomic,strong) NSMutableDictionary *testVariableValues;
 @end
 
 @implementation CalculatorViewController
@@ -22,23 +21,11 @@
 @synthesize descriptionDisplay = _descriptionDisplay;
 @synthesize userIsInTheMiddleOfTypingANumber = _userIsInTheMiddleOfTypingANumber;
 @synthesize brain = _brain;
-@synthesize testVariableValues = _testVariableValues;
 
 - (CalculatorBrain *) brain
 {
     if( _brain == nil ) _brain = [[CalculatorBrain alloc] init];
     return _brain;
-}
-
-- (NSMutableDictionary *) testVariableValues
-{
-    if(_testVariableValues == nil) _testVariableValues = [[NSMutableDictionary alloc] init];
-    return _testVariableValues;
-}
-
-- (void) updateDisplay
-{
-    // Update the logic to update all the screen elements here instead of doing it every method
 }
 
 - (IBAction)digitPressed:(UIButton * )sender 
@@ -50,6 +37,20 @@
     else {
         self.display.text = digit;
         self.userIsInTheMiddleOfTypingANumber = YES;
+    }
+}
+
+- (IBAction)graphPressed 
+{
+    id gvc = [self.splitViewController.childViewControllers lastObject];
+    if(![gvc isKindOfClass:[GraphViewController class]])
+    {
+        gvc = nil;
+    }
+    if(gvc)
+    {
+        GraphViewController *graph = (GraphViewController *) gvc;
+        graph.program = self.brain.program;
     }
 }
 
@@ -75,7 +76,7 @@
     if (self.userIsInTheMiddleOfTypingANumber) {
         [self enterPressed];
     }
-    double result = [self.brain performOperation:sender.currentTitle withVariableValues:self.testVariableValues];
+    double result = [self.brain performOperation:sender.currentTitle withVariableValues:nil];
     [self updateHistoryLabel:sender.currentTitle];
     self.display.text = [NSString stringWithFormat:@"%g ",result];
 }
@@ -98,7 +99,6 @@
     [self.brain clear];
     self.display.text = @"0";
     self.descriptionDisplay.text = @"";
-    self.testVariableValues = nil;
     self.userIsInTheMiddleOfTypingANumber = NO;
 }
 
