@@ -9,6 +9,7 @@
 #import "GraphViewController.h"
 #import "GraphView.h"
 #import "CalculatorBrain.h"
+#import "CalculatorProgramsTableViewController.h"
 
 @interface GraphViewController () <GraphViewDataSource>
 @property (strong, nonatomic) IBOutlet GraphView *graphView;
@@ -75,4 +76,25 @@
     [self setToolbar:nil];
     [super viewDidUnload];
 }
+
+#define FAVOURITES_KEY @"GraphViewController.Favourites"
+
+- (IBAction)addToFavourites 
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *favourites = [[defaults objectForKey:FAVOURITES_KEY] mutableCopy] ;
+    if(!favourites) favourites = [[NSMutableArray alloc] init]; 
+    [favourites addObject:self.program];
+    [defaults setObject:favourites forKey:FAVOURITES_KEY];
+    [defaults synchronize];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowFavourites"])
+    {
+        [(CalculatorProgramsTableViewController *)(segue.destinationViewController) setPrograms:[[NSUserDefaults standardUserDefaults] objectForKey:FAVOURITES_KEY]];
+    }
+}
+
 @end
