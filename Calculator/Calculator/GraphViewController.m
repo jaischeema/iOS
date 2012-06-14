@@ -30,7 +30,7 @@
     {
         NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
         if( _splitViewBarButton ) [toolbarItems removeObject:_splitViewBarButton];
-        if(splitViewBarButton) [toolbarItems addObject:splitViewBarButton];
+        if(splitViewBarButton) [toolbarItems insertObject:splitViewBarButton atIndex:0];
         _splitViewBarButton = splitViewBarButton;
         self.toolbar.items = toolbarItems;
     }
@@ -56,6 +56,7 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self.graphView action:@selector(threeTaps:)];
     tapGesture.numberOfTapsRequired = 3;
     [self.graphView addGestureRecognizer:tapGesture];
+    NSLog(@"This works");
 }
 
 - (CGFloat)valueOfGraphAt:(CGFloat)x;
