@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "234D68F315896455001CC9D1"
+               BlueprintIdentifier = "23162A53158C5A5C0080BE94"
                BuildableName = "Flictor.app"
                BlueprintName = "Flictor"
                ReferencedContainer = "container:Flictor.xcodeproj">
@@ -31,7 +31,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "234D68F315896455001CC9D1"
+            BlueprintIdentifier = "23162A53158C5A5C0080BE94"
             BuildableName = "Flictor.app"
             BlueprintName = "Flictor"
             ReferencedContainer = "container:Flictor.xcodeproj">
@@ -50,7 +50,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "234D68F315896455001CC9D1"
+            BlueprintIdentifier = "23162A53158C5A5C0080BE94"
             BuildableName = "Flictor.app"
             BlueprintName = "Flictor"
             ReferencedContainer = "container:Flictor.xcodeproj">
@@ -68,7 +68,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "234D68F315896455001CC9D1"
+            BlueprintIdentifier = "23162A53158C5A5C0080BE94"
             BuildableName = "Flictor.app"
             BlueprintName = "Flictor"
             ReferencedContainer = "container:Flictor.xcodeproj">

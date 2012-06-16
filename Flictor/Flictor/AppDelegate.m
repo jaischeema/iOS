@@ -1,14 +1,14 @@
 //
-//  FlictorAppDelegate.m
+//  AppDelegate.m
 //  Flictor
 //
-//  Created by Jais Cheema on 14/06/12.
-//  Copyright (c) 2012 CyberSecure. All rights reserved.
+//  Created by Jais Cheema on 16/06/12.
+//  Copyright (c) 2012 Allmark. All rights reserved.
 //
 
-#import "FlictorAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation FlictorAppDelegate
+@implementation AppDelegate
 
 @synthesize window = _window;
 

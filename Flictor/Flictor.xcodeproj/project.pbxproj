@@ -7,124 +7,134 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		234D68F915896455001CC9D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234D68F815896455001CC9D1 /* UIKit.framework */; };
-		234D68FB15896455001CC9D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234D68FA15896455001CC9D1 /* Foundation.framework */; };
-		234D68FD15896455001CC9D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234D68FC15896455001CC9D1 /* CoreGraphics.framework */; };
-		234D690315896455001CC9D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 234D690115896455001CC9D1 /* InfoPlist.strings */; };
-		234D690515896455001CC9D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 234D690415896455001CC9D1 /* main.m */; };
-		234D690915896455001CC9D1 /* FlictorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 234D690815896455001CC9D1 /* FlictorAppDelegate.m */; };
-		234D690C15896455001CC9D1 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234D690A15896455001CC9D1 /* iPhone.storyboard */; };
-		234D690F15896455001CC9D1 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234D690D15896455001CC9D1 /* iPad.storyboard */; };
-		234D691215896455001CC9D1 /* FlictorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 234D691115896455001CC9D1 /* FlictorViewController.m */; };
+		23162A59158C5A5C0080BE94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23162A58158C5A5C0080BE94 /* UIKit.framework */; };
+		23162A5B158C5A5C0080BE94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23162A5A158C5A5C0080BE94 /* Foundation.framework */; };
+		23162A5D158C5A5C0080BE94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23162A5C158C5A5C0080BE94 /* CoreGraphics.framework */; };
+		23162A63158C5A5C0080BE94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23162A61158C5A5C0080BE94 /* InfoPlist.strings */; };
+		23162A65158C5A5C0080BE94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23162A64158C5A5C0080BE94 /* main.m */; };
+		23162A69158C5A5C0080BE94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23162A68158C5A5C0080BE94 /* AppDelegate.m */; };
+		23162A6C158C5A5C0080BE94 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23162A6A158C5A5C0080BE94 /* iPhone.storyboard */; };
+		23162A6F158C5A5C0080BE94 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23162A6D158C5A5C0080BE94 /* iPad.storyboard */; };
+		23162A7B158C5AD90080BE94 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 23162A7A158C5AD90080BE94 /* FlickrFetcher.m */; };
+		23162A7E158C5BAA0080BE94 /* FlictorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23162A7D158C5BAA0080BE94 /* FlictorTableViewController.m */; };
+		23162A87158C7F910080BE94 /* 28-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 23162A86158C7F910080BE94 /* 28-star.png */; };
+		23162A89158C7FAC0080BE94 /* 29-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 23162A88158C7FAC0080BE94 /* 29-heart.png */; };
+		23162A8B158C7FB60080BE94 /* 42-photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 23162A8A158C7FB60080BE94 /* 42-photos.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		234D68F415896455001CC9D1 /* Flictor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flictor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		234D68F815896455001CC9D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		234D68FA15896455001CC9D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		234D68FC15896455001CC9D1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		234D690015896455001CC9D1 /* Flictor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Flictor-Info.plist"; sourceTree = "<group>"; };
-		234D690215896455001CC9D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		234D690415896455001CC9D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		234D690615896455001CC9D1 /* Flictor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flictor-Prefix.pch"; sourceTree = "<group>"; };
-		234D690715896455001CC9D1 /* FlictorAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlictorAppDelegate.h; sourceTree = "<group>"; };
-		234D690815896455001CC9D1 /* FlictorAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlictorAppDelegate.m; sourceTree = "<group>"; };
-		234D690B15896455001CC9D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
-		234D690E15896455001CC9D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
-		234D691015896455001CC9D1 /* FlictorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlictorViewController.h; sourceTree = "<group>"; };
-		234D691115896455001CC9D1 /* FlictorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlictorViewController.m; sourceTree = "<group>"; };
-		234D691915896484001CC9D1 /* FlickrAPIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
-		234D691A15896484001CC9D1 /* FlickrFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
-		234D691B15896484001CC9D1 /* FlickrFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		23162A54158C5A5C0080BE94 /* Flictor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flictor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23162A58158C5A5C0080BE94 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		23162A5A158C5A5C0080BE94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		23162A5C158C5A5C0080BE94 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		23162A60158C5A5C0080BE94 /* Flictor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Flictor-Info.plist"; sourceTree = "<group>"; };
+		23162A62158C5A5C0080BE94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		23162A64158C5A5C0080BE94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		23162A66158C5A5C0080BE94 /* Flictor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flictor-Prefix.pch"; sourceTree = "<group>"; };
+		23162A67158C5A5C0080BE94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		23162A68158C5A5C0080BE94 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		23162A6B158C5A5C0080BE94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhone.storyboard; sourceTree = "<group>"; };
+		23162A6E158C5A5C0080BE94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPad.storyboard; sourceTree = "<group>"; };
+		23162A78158C5AD90080BE94 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		23162A79158C5AD90080BE94 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		23162A7A158C5AD90080BE94 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		23162A7C158C5BAA0080BE94 /* FlictorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlictorTableViewController.h; sourceTree = "<group>"; };
+		23162A7D158C5BAA0080BE94 /* FlictorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlictorTableViewController.m; sourceTree = "<group>"; };
+		23162A86158C7F910080BE94 /* 28-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "28-star.png"; sourceTree = "<group>"; };
+		23162A88158C7FAC0080BE94 /* 29-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart.png"; sourceTree = "<group>"; };
+		23162A8A158C7FB60080BE94 /* 42-photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "42-photos.png"; path = "../42-photos.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		234D68F115896455001CC9D1 /* Frameworks */ = {
+		23162A51158C5A5C0080BE94 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				234D68F915896455001CC9D1 /* UIKit.framework in Frameworks */,
-				234D68FB15896455001CC9D1 /* Foundation.framework in Frameworks */,
-				234D68FD15896455001CC9D1 /* CoreGraphics.framework in Frameworks */,
+				23162A59158C5A5C0080BE94 /* UIKit.framework in Frameworks */,
+				23162A5B158C5A5C0080BE94 /* Foundation.framework in Frameworks */,
+				23162A5D158C5A5C0080BE94 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		234D68E915896455001CC9D1 = {
+		23162A49158C5A5C0080BE94 = {
 			isa = PBXGroup;
 			children = (
-				234D68FE15896455001CC9D1 /* Flictor */,
-				234D68F715896455001CC9D1 /* Frameworks */,
-				234D68F515896455001CC9D1 /* Products */,
+				23162A5E158C5A5C0080BE94 /* Flictor */,
+				23162A57158C5A5C0080BE94 /* Frameworks */,
+				23162A55158C5A5C0080BE94 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		234D68F515896455001CC9D1 /* Products */ = {
+		23162A55158C5A5C0080BE94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				234D68F415896455001CC9D1 /* Flictor.app */,
+				23162A54158C5A5C0080BE94 /* Flictor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		234D68F715896455001CC9D1 /* Frameworks */ = {
+		23162A57158C5A5C0080BE94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				234D68F815896455001CC9D1 /* UIKit.framework */,
-				234D68FA15896455001CC9D1 /* Foundation.framework */,
-				234D68FC15896455001CC9D1 /* CoreGraphics.framework */,
+				23162A58158C5A5C0080BE94 /* UIKit.framework */,
+				23162A5A158C5A5C0080BE94 /* Foundation.framework */,
+				23162A5C158C5A5C0080BE94 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		234D68FE15896455001CC9D1 /* Flictor */ = {
+		23162A5E158C5A5C0080BE94 /* Flictor */ = {
 			isa = PBXGroup;
 			children = (
-				234D691815896469001CC9D1 /* Flicker */,
-				234D690715896455001CC9D1 /* FlictorAppDelegate.h */,
-				234D690815896455001CC9D1 /* FlictorAppDelegate.m */,
-				234D690A15896455001CC9D1 /* iPhone.storyboard */,
-				234D690D15896455001CC9D1 /* iPad.storyboard */,
-				234D691015896455001CC9D1 /* FlictorViewController.h */,
-				234D691115896455001CC9D1 /* FlictorViewController.m */,
-				234D68FF15896455001CC9D1 /* Supporting Files */,
+				23162A8F158C82ED0080BE94 /* icons */,
+				23162A78158C5AD90080BE94 /* FlickrAPIKey.h */,
+				23162A7C158C5BAA0080BE94 /* FlictorTableViewController.h */,
+				23162A7D158C5BAA0080BE94 /* FlictorTableViewController.m */,
+				23162A79158C5AD90080BE94 /* FlickrFetcher.h */,
+				23162A7A158C5AD90080BE94 /* FlickrFetcher.m */,
+				23162A6A158C5A5C0080BE94 /* iPhone.storyboard */,
+				23162A6D158C5A5C0080BE94 /* iPad.storyboard */,
+				23162A5F158C5A5C0080BE94 /* Supporting Files */,
 			);
 			path = Flictor;
 			sourceTree = "<group>";
 		};
-		234D68FF15896455001CC9D1 /* Supporting Files */ = {
+		23162A5F158C5A5C0080BE94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				234D690015896455001CC9D1 /* Flictor-Info.plist */,
-				234D690115896455001CC9D1 /* InfoPlist.strings */,
-				234D690415896455001CC9D1 /* main.m */,
-				234D690615896455001CC9D1 /* Flictor-Prefix.pch */,
+				23162A67158C5A5C0080BE94 /* AppDelegate.h */,
+				23162A68158C5A5C0080BE94 /* AppDelegate.m */,
+				23162A60158C5A5C0080BE94 /* Flictor-Info.plist */,
+				23162A61158C5A5C0080BE94 /* InfoPlist.strings */,
+				23162A64158C5A5C0080BE94 /* main.m */,
+				23162A66158C5A5C0080BE94 /* Flictor-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		234D691815896469001CC9D1 /* Flicker */ = {
+		23162A8F158C82ED0080BE94 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				234D691915896484001CC9D1 /* FlickrAPIKey.h */,
-				234D691A15896484001CC9D1 /* FlickrFetcher.h */,
-				234D691B15896484001CC9D1 /* FlickrFetcher.m */,
+				23162A88158C7FAC0080BE94 /* 29-heart.png */,
+				23162A86158C7F910080BE94 /* 28-star.png */,
+				23162A8A158C7FB60080BE94 /* 42-photos.png */,
 			);
-			name = Flicker;
+			name = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		234D68F315896455001CC9D1 /* Flictor */ = {
+		23162A53158C5A5C0080BE94 /* Flictor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 234D691515896455001CC9D1 /* Build configuration list for PBXNativeTarget "Flictor" */;
+			buildConfigurationList = 23162A75158C5A5C0080BE94 /* Build configuration list for PBXNativeTarget "Flictor" */;
 			buildPhases = (
-				234D68F015896455001CC9D1 /* Sources */,
-				234D68F115896455001CC9D1 /* Frameworks */,
-				234D68F215896455001CC9D1 /* Resources */,
+				23162A50158C5A5C0080BE94 /* Sources */,
+				23162A51158C5A5C0080BE94 /* Frameworks */,
+				23162A52158C5A5C0080BE94 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -132,83 +142,86 @@
 			);
 			name = Flictor;
 			productName = Flictor;
-			productReference = 234D68F415896455001CC9D1 /* Flictor.app */;
+			productReference = 23162A54158C5A5C0080BE94 /* Flictor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		234D68EB15896455001CC9D1 /* Project object */ = {
+		23162A4B158C5A5C0080BE94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = Flictor;
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = CyberSecure;
+				ORGANIZATIONNAME = Allmark;
 			};
-			buildConfigurationList = 234D68EE15896455001CC9D1 /* Build configuration list for PBXProject "Flictor" */;
+			buildConfigurationList = 23162A4E158C5A5C0080BE94 /* Build configuration list for PBXProject "Flictor" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 234D68E915896455001CC9D1;
-			productRefGroup = 234D68F515896455001CC9D1 /* Products */;
+			mainGroup = 23162A49158C5A5C0080BE94;
+			productRefGroup = 23162A55158C5A5C0080BE94 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				234D68F315896455001CC9D1 /* Flictor */,
+				23162A53158C5A5C0080BE94 /* Flictor */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		234D68F215896455001CC9D1 /* Resources */ = {
+		23162A52158C5A5C0080BE94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				234D690315896455001CC9D1 /* InfoPlist.strings in Resources */,
-				234D690C15896455001CC9D1 /* iPhone.storyboard in Resources */,
-				234D690F15896455001CC9D1 /* iPad.storyboard in Resources */,
+				23162A63158C5A5C0080BE94 /* InfoPlist.strings in Resources */,
+				23162A6C158C5A5C0080BE94 /* iPhone.storyboard in Resources */,
+				23162A6F158C5A5C0080BE94 /* iPad.storyboard in Resources */,
+				23162A87158C7F910080BE94 /* 28-star.png in Resources */,
+				23162A89158C7FAC0080BE94 /* 29-heart.png in Resources */,
+				23162A8B158C7FB60080BE94 /* 42-photos.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		234D68F015896455001CC9D1 /* Sources */ = {
+		23162A50158C5A5C0080BE94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				234D690515896455001CC9D1 /* main.m in Sources */,
-				234D690915896455001CC9D1 /* FlictorAppDelegate.m in Sources */,
-				234D691215896455001CC9D1 /* FlictorViewController.m in Sources */,
+				23162A65158C5A5C0080BE94 /* main.m in Sources */,
+				23162A69158C5A5C0080BE94 /* AppDelegate.m in Sources */,
+				23162A7B158C5AD90080BE94 /* FlickrFetcher.m in Sources */,
+				23162A7E158C5BAA0080BE94 /* FlictorTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		234D690115896455001CC9D1 /* InfoPlist.strings */ = {
+		23162A61158C5A5C0080BE94 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				234D690215896455001CC9D1 /* en */,
+				23162A62158C5A5C0080BE94 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		234D690A15896455001CC9D1 /* iPhone.storyboard */ = {
+		23162A6A158C5A5C0080BE94 /* iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				234D690B15896455001CC9D1 /* en */,
+				23162A6B158C5A5C0080BE94 /* en */,
 			);
 			name = iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		234D690D15896455001CC9D1 /* iPad.storyboard */ = {
+		23162A6D158C5A5C0080BE94 /* iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				234D690E15896455001CC9D1 /* en */,
+				23162A6E158C5A5C0080BE94 /* en */,
 			);
 			name = iPad.storyboard;
 			sourceTree = "<group>";
@@ -216,7 +229,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		234D691315896455001CC9D1 /* Debug */ = {
+		23162A73158C5A5C0080BE94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -242,7 +255,7 @@
 			};
 			name = Debug;
 		};
-		234D691415896455001CC9D1 /* Release */ = {
+		23162A74158C5A5C0080BE94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -263,7 +276,7 @@
 			};
 			name = Release;
 		};
-		234D691615896455001CC9D1 /* Debug */ = {
+		23162A76158C5A5C0080BE94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -274,7 +287,7 @@
 			};
 			name = Debug;
 		};
-		234D691715896455001CC9D1 /* Release */ = {
+		23162A77158C5A5C0080BE94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -288,24 +301,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		234D68EE15896455001CC9D1 /* Build configuration list for PBXProject "Flictor" */ = {
+		23162A4E158C5A5C0080BE94 /* Build configuration list for PBXProject "Flictor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				234D691315896455001CC9D1 /* Debug */,
-				234D691415896455001CC9D1 /* Release */,
+				23162A73158C5A5C0080BE94 /* Debug */,
+				23162A74158C5A5C0080BE94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		234D691515896455001CC9D1 /* Build configuration list for PBXNativeTarget "Flictor" */ = {
+		23162A75158C5A5C0080BE94 /* Build configuration list for PBXNativeTarget "Flictor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				234D691615896455001CC9D1 /* Debug */,
-				234D691715896455001CC9D1 /* Release */,
+				23162A76158C5A5C0080BE94 /* Debug */,
+				23162A77158C5A5C0080BE94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 234D68EB15896455001CC9D1 /* Project object */;
+	rootObject = 23162A4B158C5A5C0080BE94 /* Project object */;
 }
