@@ -8,6 +8,7 @@
 
 #import "FlictorTableViewController.h"
 #import "FlickrFetcher.h"
+#import "ImageTableViewController.h"
 
 @interface FlictorTableViewController ()
 
@@ -33,10 +34,14 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     dispatch_queue_t downloadQueue = dispatch_queue_create("flickr top places", NULL);
     dispatch_async(downloadQueue, ^{
-        NSArray *places = [FlickrFetcher topPlaces];
+        NSMutableArray *places = [[FlickrFetcher topPlaces] mutableCopy];
+        [places sortUsingComparator: ^NSComparisonResult(id obj1, id obj2) {            
+            return [[obj1 objectForKey:FLICKR_PLACE_NAME]  compare:[obj2 objectForKey:FLICKR_PLACE_NAME]];
+        }];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             self.navigationItem.rightBarButtonItem = sender;
-            self.topPlaces = places;
+            self.topPlaces = [places copy];
         });
     });
     dispatch_release(downloadQueue);
@@ -97,18 +102,27 @@
     return cell;
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"Images for Place"])
+    {
+        NSIndexPath *path = [self.tableView indexPathForCell:sender];
+        dispatch_queue_t imageQueue = dispatch_queue_create("flickr image list", NULL);
+        dispatch_async(imageQueue, ^{
+            NSArray *photos = [FlickrFetcher photosInPlace:[self.topPlaces objectAtIndex:path.row] maxResults:20];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [segue.destinationViewController setImages:photos];
+            });
+        });
+        dispatch_release(imageQueue);
+    }
+}
+
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
 @end
