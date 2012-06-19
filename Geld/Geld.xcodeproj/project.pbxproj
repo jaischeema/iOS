@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2331E1EE158D761A00643AEA /* AddTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2331E1ED158D761A00643AEA /* AddTransactionViewController.m */; };
+		2331E1F1158D769500643AEA /* TransactionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2331E1F0158D769500643AEA /* TransactionsTableViewController.m */; };
+		2331E1F4158D774200643AEA /* ScheduledTransactionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2331E1F3158D774200643AEA /* ScheduledTransactionsTableViewController.m */; };
+		2331E1F7158D779500643AEA /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2331E1F6158D779500643AEA /* SettingsTableViewController.m */; };
 		23989D5F1586EA6D00D1BFAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23989D5E1586EA6D00D1BFAB /* UIKit.framework */; };
 		23989D611586EA6D00D1BFAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23989D601586EA6D00D1BFAB /* Foundation.framework */; };
 		23989D631586EA6D00D1BFAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23989D621586EA6D00D1BFAB /* CoreGraphics.framework */; };
@@ -14,11 +18,17 @@
 		23989D6B1586EA6D00D1BFAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D6A1586EA6D00D1BFAB /* main.m */; };
 		23989D6F1586EA6D00D1BFAB /* GeldAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D6E1586EA6D00D1BFAB /* GeldAppDelegate.m */; };
 		23989D721586EA6D00D1BFAB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23989D701586EA6D00D1BFAB /* MainStoryboard.storyboard */; };
-		23989D751586EA6D00D1BFAB /* GeldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D741586EA6D00D1BFAB /* GeldViewController.m */; };
-		23989D7D1586ECD700D1BFAB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23989D7C1586ECD700D1BFAB /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2331E1EC158D761A00643AEA /* AddTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTransactionViewController.h; sourceTree = "<group>"; };
+		2331E1ED158D761A00643AEA /* AddTransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTransactionViewController.m; sourceTree = "<group>"; };
+		2331E1EF158D769500643AEA /* TransactionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionsTableViewController.h; sourceTree = "<group>"; };
+		2331E1F0158D769500643AEA /* TransactionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionsTableViewController.m; sourceTree = "<group>"; };
+		2331E1F2158D774200643AEA /* ScheduledTransactionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledTransactionsTableViewController.h; sourceTree = "<group>"; };
+		2331E1F3158D774200643AEA /* ScheduledTransactionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledTransactionsTableViewController.m; sourceTree = "<group>"; };
+		2331E1F5158D779500643AEA /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		2331E1F6158D779500643AEA /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		23989D5A1586EA6D00D1BFAB /* Geld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23989D5E1586EA6D00D1BFAB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		23989D601586EA6D00D1BFAB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -30,10 +40,6 @@
 		23989D6D1586EA6D00D1BFAB /* GeldAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeldAppDelegate.h; sourceTree = "<group>"; };
 		23989D6E1586EA6D00D1BFAB /* GeldAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeldAppDelegate.m; sourceTree = "<group>"; };
 		23989D711586EA6D00D1BFAB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		23989D731586EA6D00D1BFAB /* GeldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeldViewController.h; sourceTree = "<group>"; };
-		23989D741586EA6D00D1BFAB /* GeldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeldViewController.m; sourceTree = "<group>"; };
-		23989D7B1586ECD700D1BFAB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		23989D7C1586ECD700D1BFAB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,14 +86,18 @@
 		23989D641586EA6D00D1BFAB /* Geld */ = {
 			isa = PBXGroup;
 			children = (
+				2331E1EC158D761A00643AEA /* AddTransactionViewController.h */,
+				2331E1ED158D761A00643AEA /* AddTransactionViewController.m */,
 				23989D6D1586EA6D00D1BFAB /* GeldAppDelegate.h */,
 				23989D6E1586EA6D00D1BFAB /* GeldAppDelegate.m */,
 				23989D701586EA6D00D1BFAB /* MainStoryboard.storyboard */,
-				23989D731586EA6D00D1BFAB /* GeldViewController.h */,
-				23989D741586EA6D00D1BFAB /* GeldViewController.m */,
+				2331E1F5158D779500643AEA /* SettingsTableViewController.h */,
+				2331E1F6158D779500643AEA /* SettingsTableViewController.m */,
+				2331E1F2158D774200643AEA /* ScheduledTransactionsTableViewController.h */,
+				2331E1F3158D774200643AEA /* ScheduledTransactionsTableViewController.m */,
+				2331E1EF158D769500643AEA /* TransactionsTableViewController.h */,
+				2331E1F0158D769500643AEA /* TransactionsTableViewController.m */,
 				23989D651586EA6D00D1BFAB /* Supporting Files */,
-				23989D7B1586ECD700D1BFAB /* LoginViewController.h */,
-				23989D7C1586ECD700D1BFAB /* LoginViewController.m */,
 			);
 			path = Geld;
 			sourceTree = "<group>";
@@ -169,8 +179,10 @@
 			files = (
 				23989D6B1586EA6D00D1BFAB /* main.m in Sources */,
 				23989D6F1586EA6D00D1BFAB /* GeldAppDelegate.m in Sources */,
-				23989D751586EA6D00D1BFAB /* GeldViewController.m in Sources */,
-				23989D7D1586ECD700D1BFAB /* LoginViewController.m in Sources */,
+				2331E1EE158D761A00643AEA /* AddTransactionViewController.m in Sources */,
+				2331E1F1158D769500643AEA /* TransactionsTableViewController.m in Sources */,
+				2331E1F4158D774200643AEA /* ScheduledTransactionsTableViewController.m in Sources */,
+				2331E1F7158D779500643AEA /* SettingsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +294,7 @@
 				23989D7A1586EA6D00D1BFAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
