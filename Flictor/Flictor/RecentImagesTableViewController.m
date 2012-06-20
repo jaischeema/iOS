@@ -14,6 +14,14 @@
 
 @implementation RecentImagesTableViewController
 
+- (IBAction)clear:(id)sender 
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[[NSArray alloc] init] forKey:RECENT_IMAGES];
+    [defaults synchronize];
+    self.images = nil;
+}
+
 - (void) loadImages
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -58,5 +66,8 @@
         });
         dispatch_release(imageQueue);
     }
+}
+- (void)viewDidUnload {
+    [super viewDidUnload];
 }
 @end

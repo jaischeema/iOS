@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="DxI-H9-dXk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="DxI-H9-dXk">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
         <!--Places Table View Controller - Top Places-->
@@ -232,7 +232,13 @@
                             <outlet property="delegate" destination="STe-as-doM" id="GJt-hU-j7z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recent Images" id="xwJ-U4-V4P"/>
+                    <navigationItem key="navigationItem" title="Recent Images" id="xwJ-U4-V4P">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="y2L-dR-csI">
+                            <connections>
+                                <action selector="clear:" destination="STe-as-doM" id="oQf-Wz-cHw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1104" y="823"/>
@@ -321,6 +327,9 @@
         </class>
         <class className="RecentImagesTableViewController" superclassName="ImageTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentImagesTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="clear" candidateClass="UIBarButtonItem"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
