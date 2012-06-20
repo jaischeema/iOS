@@ -3,7 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
         <!--Flictor Table View Controller - Top Places-->
@@ -127,6 +127,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" id="e8C-4P-zSq" customClass="UIActivityIndicatorView">
+                                        <rect key="frame" x="140" y="164" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <connections>
                                     <outlet property="delegate" destination="G8X-D7-H9L" id="qAx-Y7-I1E"/>
@@ -139,6 +144,7 @@
                     <connections>
                         <outlet property="imageView" destination="iFc-9F-kkG" id="xez-4U-xaa"/>
                         <outlet property="scrollView" destination="gwU-Jl-DkV" id="v5w-FV-P1a"/>
+                        <outlet property="spinner" destination="e8C-4P-zSq" id="l2L-fo-XCq"/>
                     </connections>
                 </viewController>
             </objects>
@@ -264,6 +270,7 @@
             <relationships>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
             </relationships>
         </class>
     </classes>

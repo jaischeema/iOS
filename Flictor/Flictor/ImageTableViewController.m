@@ -8,6 +8,7 @@
 
 #import "ImageTableViewController.h"
 #import "FlickrFetcher.h"
+#import "ImageViewController.h"
 
 @interface ImageTableViewController ()
 
@@ -29,7 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    UIActivityIndicatorViewS
+    [self.navigationItem.rightBarButtonItem = [UIBarButtonItem alloc] initWithCustomView:[
 }
 
 - (void)viewDidUnload
@@ -48,8 +50,7 @@
 
 - (NSString *) descriptionForImage:(NSDictionary *)image
 {
-    NSArray *keys = [FLICKR_PHOTO_DESCRIPTION componentsSeparatedByString:@"."];
-    NSString *description = [[image objectForKey:[keys objectAtIndex:0]] objectForKey:[keys lastObject]];
+    NSString *description = [image valueForKeyPath:FLICKR_PHOTO_DESCRIPTION]; 
     if(!description || [description isEqualToString:@""])
     {
         description = nil;
