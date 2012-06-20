@@ -6,11 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
-        <!--Flictor Table View Controller - Top Places-->
+        <!--Places Table View Controller - Top Places-->
         <scene sceneID="hNZ-Rn-iPp">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zDP-vN-Xup" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="10Z-Zn-wah" customClass="FlictorTableViewController" sceneMemberID="viewController">
+                <tableViewController id="10Z-Zn-wah" customClass="PlacesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="1LN-yo-P1u">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,11 +61,11 @@
             </objects>
             <point key="canvasLocation" x="920" y="16"/>
         </scene>
-        <!--Image Table View Controller - Images-->
+        <!--Place Images Table View Controller - Images-->
         <scene sceneID="YYY-MZ-4AA">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTG-cn-uyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="vYk-x2-K6V" customClass="ImageTableViewController" sceneMemberID="viewController">
+                <tableViewController id="vYk-x2-K6V" customClass="PlaceImagesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="s9K-Bv-qyt">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,9 +259,6 @@
         <image name="42-photos.png" width="22" height="24"/>
     </resources>
     <classes>
-        <class className="FlictorTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlictorTableViewController.h"/>
-        </class>
         <class className="ImageTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageTableViewController.h"/>
         </class>
@@ -272,6 +269,12 @@
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
             </relationships>
+        </class>
+        <class className="PlaceImagesTableViewController" superclassName="ImageTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceImagesTableViewController.h"/>
+        </class>
+        <class className="PlacesTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlacesTableViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

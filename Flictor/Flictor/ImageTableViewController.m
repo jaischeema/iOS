@@ -11,7 +11,6 @@
 #import "ImageViewController.h"
 
 @interface ImageTableViewController ()
-
 @end
 
 @implementation ImageTableViewController
@@ -23,6 +22,7 @@
     if( _images != images )
     {
         _images = images;
+        self.navigationItem.rightBarButtonItem = nil;
         [self.tableView reloadData];
     }
 }
@@ -30,8 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIActivityIndicatorViewS
-    [self.navigationItem.rightBarButtonItem = [UIBarButtonItem alloc] initWithCustomView:[
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
 }
 
 - (void)viewDidUnload
@@ -97,32 +98,7 @@
     return title;
 }
 
-#define RECENT_IMAGES @"Flictor.ImageViewController.Recent"
 
-- (void) addToRecentlyViewedItems:(NSDictionary *)image
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *recents = [[defaults arrayForKey:RECENT_IMAGES] mutableCopy];
-    if(!recents)
-    {
-        recents = [[NSMutableArray alloc] init];
-    }
-    BOOL alreadyThere = NO;
-    for(NSDictionary *obj in recents)
-    {
-        if([[obj objectForKey:FLICKR_PHOTO_ID] isEqualToString:[image objectForKey:FLICKR_PHOTO_ID]])
-        {
-            alreadyThere = YES;
-            break;
-        }
-    }
-    if(!alreadyThere)
-    {
-        [recents addObject:image];
-    }
-    [defaults setObject:[recents copy] forKey:RECENT_IMAGES];
-    [defaults synchronize];
-}
 
 #pragma mark - Table view data source
 
@@ -144,26 +120,6 @@
     cell.textLabel.text = [self titleForImage:obj];
     cell.detailTextLabel.text = [self descriptionForImage:obj];
     return cell;
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"Image"])
-    {
-        NSIndexPath *path = [self.tableView indexPathForCell:sender];
-        NSDictionary *imageObj = [self.images objectAtIndex:path.row];
-        dispatch_queue_t imageQueue = dispatch_queue_create("flickr image download", NULL);
-        dispatch_async(imageQueue, ^{
-            NSURL *url = [FlickrFetcher urlForPhoto:imageObj format:FlickrPhotoFormatLarge];
-            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [segue.destinationViewController setImage:image];
-                [segue.destinationViewController setTitle:[self titleForImage:imageObj]];
-            });
-        });
-        dispatch_release(imageQueue);
-        [self addToRecentlyViewedItems:imageObj];
-    }
 }
 
 

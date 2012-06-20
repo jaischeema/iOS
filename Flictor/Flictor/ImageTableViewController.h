@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define RECENT_IMAGES @"Flictor.ImageViewController.Recent"
+
 @interface ImageTableViewController : UITableViewController
 @property (nonatomic,strong) NSArray *images;
+
+- (NSString *) titleForImage:(NSDictionary *)image;
+- (NSString *) descriptionForImage:(NSDictionary *)image;
+
 @end

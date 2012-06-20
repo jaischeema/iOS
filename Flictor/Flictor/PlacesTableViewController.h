@@ -1,5 +1,5 @@
 //
-//  ImageViewController.h
+//  PlacesTableViewController.h
 //  Flictor
 //
 //  Created by Jais Cheema on 20/06/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImageViewController : UIViewController
-@property (nonatomic,strong) UIImage *image;
+@interface PlacesTableViewController : UITableViewController
+@property (nonatomic,strong) NSArray *topPlaces;
 @end

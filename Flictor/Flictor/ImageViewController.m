@@ -2,17 +2,17 @@
 //  ImageViewController.m
 //  Flictor
 //
-//  Created by Jais Cheema on 17/06/12.
+//  Created by Jais Cheema on 20/06/12.
 //  Copyright (c) 2012 Allmark. All rights reserved.
 //
 
 #import "ImageViewController.h"
 
 @interface ImageViewController () <UIScrollViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-
 @end
 
 @implementation ImageViewController
@@ -21,7 +21,6 @@
 @synthesize imageView = _imageView;
 @synthesize spinner = _spinner;
 @synthesize image = _image;
-
 
 - (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
