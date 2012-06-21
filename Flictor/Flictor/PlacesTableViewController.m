@@ -10,16 +10,22 @@
 #import "FlickrFetcher.h"
 #import "PlaceImagesTableViewController.h"
 #import "ImageMapViewController.h"
+#import "FlickrAnnotation.h"
 
 @interface PlacesTableViewController ()
-
 @end
 
 @implementation PlacesTableViewController
+@synthesize topPlaces = _topPlaces;
 
 - (NSArray *)annotationsForMap
 {
-    return nil;
+    NSMutableArray *annotations = [[NSMutableArray alloc] init];
+    for(NSDictionary *place in self.topPlaces)
+    {
+        [annotations addObject:[FlickrAnnotation annotationForPhoto:place]];
+    }
+    return annotations;
 }
 
 - (void) updateSplitView
@@ -31,13 +37,14 @@
     }
 }
 
-@synthesize topPlaces = _topPlaces;
+
 
 - (void) setTopPlaces:(NSArray *)topPlaces
 {
     if(_topPlaces != topPlaces)
     {
         _topPlaces = topPlaces;
+        [self updateSplitView];
         [self.tableView reloadData];
     }
 }

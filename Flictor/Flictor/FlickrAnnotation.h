@@ -12,5 +12,4 @@
 @interface FlickrAnnotation : NSObject <MKAnnotation>
 @property (nonatomic,strong) NSDictionary *photo;
 + (FlickrAnnotation *) annotationForPhoto:(NSDictionary *)photo;
-
 @end
