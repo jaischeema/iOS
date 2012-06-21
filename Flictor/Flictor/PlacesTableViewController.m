@@ -29,11 +29,12 @@
 }
 
 - (void) updateSplitView
-{
-    id detail = [self.navigationController.splitViewController.viewControllers lastObject];
-    if([detail isKindOfClass:[MapViewController class]])
+{    
+    UINavigationController *detailNavigationController = [self.splitViewController.viewControllers lastObject];
+    id mvc = [detailNavigationController.viewControllers objectAtIndex:0];
+    if([mvc isKindOfClass:[MapViewController class]])
     {
-        [detail setAnnotations:[self annotationsForMap]];
+        [mvc setAnnotations:[self annotationsForMap]];
     }
 }
 
@@ -120,6 +121,10 @@
             });
         });
         dispatch_release(imageQueue);
+    }
+    else if([segue.identifier isEqualToString:@"ShowPlacesMap"])
+    {
+        [segue.destinationViewController setAnnotations:[self annotationsForMap]];
     }
 }
 

@@ -26,7 +26,6 @@
 		2335D88C1591B21100D08919 /* RecentImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2335D88B1591B21100D08919 /* RecentImagesTableViewController.m */; };
 		2348FE831591AD8600C28E0B /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2348FE821591AD8600C28E0B /* ImageViewController.m */; };
 		2348FE871591B03E00C28E0B /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2348FE861591B03E00C28E0B /* PlacesTableViewController.m */; };
-		23BECC1B1592B264005C3E0C /* PlacesSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BECC1A1592B264005C3E0C /* PlacesSplitViewController.m */; };
 		23BECC1F1592C1E7005C3E0C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BECC1E1592C1E7005C3E0C /* MapViewController.m */; };
 		23BECC221592C261005C3E0C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BECC201592C261005C3E0C /* CoreLocation.framework */; };
 		23BECC231592C261005C3E0C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BECC211592C261005C3E0C /* MapKit.framework */; };
@@ -65,8 +64,6 @@
 		2348FE821591AD8600C28E0B /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		2348FE851591B03E00C28E0B /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
 		2348FE861591B03E00C28E0B /* PlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesTableViewController.m; sourceTree = "<group>"; };
-		23BECC191592B264005C3E0C /* PlacesSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesSplitViewController.h; sourceTree = "<group>"; };
-		23BECC1A1592B264005C3E0C /* PlacesSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesSplitViewController.m; sourceTree = "<group>"; };
 		23BECC1D1592C1E7005C3E0C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		23BECC1E1592C1E7005C3E0C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		23BECC201592C261005C3E0C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -122,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				23BECC1C1592C1A3005C3E0C /* mapvcs */,
-				23BECC141592B1F4005C3E0C /* spiltvcs */,
 				2335D8861591B15A00D08919 /* imagetvcs */,
 				2348FE811591AD8600C28E0B /* ImageViewController.h */,
 				2348FE821591AD8600C28E0B /* ImageViewController.m */,
@@ -173,15 +169,6 @@
 				2335D88B1591B21100D08919 /* RecentImagesTableViewController.m */,
 			);
 			name = imagetvcs;
-			sourceTree = "<group>";
-		};
-		23BECC141592B1F4005C3E0C /* spiltvcs */ = {
-			isa = PBXGroup;
-			children = (
-				23BECC191592B264005C3E0C /* PlacesSplitViewController.h */,
-				23BECC1A1592B264005C3E0C /* PlacesSplitViewController.m */,
-			);
-			name = spiltvcs;
 			sourceTree = "<group>";
 		};
 		23BECC1C1592C1A3005C3E0C /* mapvcs */ = {
@@ -272,7 +259,6 @@
 				2348FE871591B03E00C28E0B /* PlacesTableViewController.m in Sources */,
 				2335D8891591B18900D08919 /* PlaceImagesTableViewController.m in Sources */,
 				2335D88C1591B21100D08919 /* RecentImagesTableViewController.m in Sources */,
-				23BECC1B1592B264005C3E0C /* PlacesSplitViewController.m in Sources */,
 				23BECC1F1592C1E7005C3E0C /* MapViewController.m in Sources */,
 				230C7DA61592ECFF002DA735 /* FlickrImageAnnotation.m in Sources */,
 				230C7DAA1592ED10002DA735 /* FlickrPlaceAnnotation.m in Sources */,

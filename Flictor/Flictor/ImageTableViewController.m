@@ -9,6 +9,7 @@
 #import "ImageTableViewController.h"
 #import "FlickrFetcher.h"
 #import "ImageViewController.h"
+#import "MapViewController.h"
 
 @interface ImageTableViewController ()
 @end
@@ -17,13 +18,25 @@
 
 @synthesize images = _images;
 
+- (void) setupMap
+{
+    UIBarButtonItem *mapButton;
+    if(self.navigationController.splitViewController)
+    {
+        mapButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStyleBordered target:self action:@selector(showMapForPad:)];
+    }
+    else {
+        mapButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStyleBordered target:self action:@selector(showMapForPhone:)];
+    }
+    self.navigationItem.rightBarButtonItem = mapButton;
+}
+
 - (void) setImages:(NSArray *)images
 {
     if( _images != images )
     {
         _images = images;
-        UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStyleBordered target:self action:@selector(showMap:)];
-        self.navigationItem.rightBarButtonItem = mapButton;
+        [self setupMap];
         [self.tableView reloadData];
     }
 }
@@ -42,9 +55,14 @@
 
 }
 
-- (void) showMap:(id)sender
+- (void) showMapForPhone:(id)sender
 {
-    NSLog(@"Showing Map");
+    [self performSegueWithIdentifier:@"ShowImagesMap" sender:self];
+}
+
+- (void) showMapForPad:(id)sender
+{
+    // do something like replacing the detail view controller
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -74,7 +92,18 @@
     return cell;
 }
 
+- (NSArray *) annotationsForMap
+{
+    return nil;
+}
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"ShowImagesMap"])
+    {
+        [segue.destinationViewController setAnnotations:[self annotationsForMap]];
+    }
+}
 
 #pragma mark - Table view delegate
 

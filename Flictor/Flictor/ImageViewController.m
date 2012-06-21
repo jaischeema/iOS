@@ -43,16 +43,12 @@
         double edge = 0;
         if ( image.size.height < self.view.bounds.size.height || image.size.width < self.view.bounds.size.width)
         {
-            NSLog(@"Max Rule : %g - %g | %g - %g",image.size.height, self.view.bounds.size.height, image.size.width, self.view.bounds.size.width);
             edge = MAX(image.size.width, image.size.height);
         }
         else {
-            NSLog(@"Min Rule : %g - %g | %g - %g",image.size.height, self.view.bounds.size.height, image.size.width, self.view.bounds.size.width);
             edge = MIN(image.size.width, image.size.height);
         }
-        NSLog(@"Edge is %g",edge);
         [self.scrollView zoomToRect:CGRectMake(0, 0, edge, edge) animated:NO];
-        
         [self.scrollView setNeedsDisplay];
     }
 }

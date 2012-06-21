@@ -30,7 +30,6 @@
     {
         recentImages = [[NSArray alloc] init];
     }
-    NSLog(@"%d",[recentImages count]);
     self.images = recentImages;
 }
 
