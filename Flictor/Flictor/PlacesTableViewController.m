@@ -9,7 +9,7 @@
 #import "PlacesTableViewController.h"
 #import "FlickrFetcher.h"
 #import "PlaceImagesTableViewController.h"
-#import "ImageMapViewController.h"
+#import "MapViewController.h"
 #import "FlickrAnnotation.h"
 
 @interface PlacesTableViewController ()
@@ -31,12 +31,11 @@
 - (void) updateSplitView
 {
     id detail = [self.navigationController.splitViewController.viewControllers lastObject];
-    if([detail isKindOfClass:[ImageMapViewController class]])
+    if([detail isKindOfClass:[MapViewController class]])
     {
         [detail setAnnotations:[self annotationsForMap]];
     }
 }
-
 
 
 - (void) setTopPlaces:(NSArray *)topPlaces
@@ -63,7 +62,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.navigationItem.leftBarButtonItem = sender;
-            self.topPlaces = [places copy];
+            self.topPlaces = places;
         });
     });
     dispatch_release(downloadQueue);

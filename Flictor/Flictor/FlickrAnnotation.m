@@ -22,7 +22,10 @@
 
 - (CLLocationCoordinate2D) coordinate
 {
-    return CLLocationCoordinate2DMake(0, 0);
+    CLLocationCoordinate2D cord;
+    cord.latitude = [[self.photo objectForKey:FLICKR_LATITUDE] doubleValue];
+    cord.longitude = [[self.photo objectForKey:FLICKR_LONGITUDE] doubleValue];
+    return cord;
 }
 
 - (NSString *) title
