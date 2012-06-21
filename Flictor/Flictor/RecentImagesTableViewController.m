@@ -37,7 +37,13 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.tabBarController.delegate = self;
+    if(self.navigationController.splitViewController)
+    {
+        self.navigationController.splitViewController.tabBarController.delegate = self;
+    }
+    else {
+        self.navigationController.tabBarController.delegate = self;
+    }
     [self loadImages];
 }
 

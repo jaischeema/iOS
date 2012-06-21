@@ -22,7 +22,8 @@
     if( _images != images )
     {
         _images = images;
-        self.navigationItem.rightBarButtonItem = nil;
+        UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStyleBordered target:self action:@selector(showMap:)];
+        self.navigationItem.rightBarButtonItem = mapButton;
         [self.tableView reloadData];
     }
 }
@@ -39,6 +40,11 @@
 {
     [super viewDidUnload];
 
+}
+
+- (void) showMap:(id)sender
+{
+    NSLog(@"Showing Map");
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

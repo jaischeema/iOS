@@ -9,12 +9,27 @@
 #import "PlacesTableViewController.h"
 #import "FlickrFetcher.h"
 #import "PlaceImagesTableViewController.h"
+#import "ImageMapViewController.h"
 
 @interface PlacesTableViewController ()
 
 @end
 
 @implementation PlacesTableViewController
+
+- (NSArray *)annotationsForMap
+{
+    return nil;
+}
+
+- (void) updateSplitView
+{
+    id detail = [self.navigationController.splitViewController.viewControllers lastObject];
+    if([detail isKindOfClass:[ImageMapViewController class]])
+    {
+        [detail setAnnotations:[self annotationsForMap]];
+    }
+}
 
 @synthesize topPlaces = _topPlaces;
 
@@ -31,7 +46,7 @@
 {
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [spinner startAnimating];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     dispatch_queue_t downloadQueue = dispatch_queue_create("flickr top places", NULL);
     dispatch_async(downloadQueue, ^{
         NSMutableArray *places = [[FlickrFetcher topPlaces] mutableCopy];
@@ -40,7 +55,7 @@
         }];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.navigationItem.rightBarButtonItem = sender;
+            self.navigationItem.leftBarButtonItem = sender;
             self.topPlaces = [places copy];
         });
     });

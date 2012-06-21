@@ -57,4 +57,27 @@
     }
 }
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.navigationController.splitViewController)
+    {
+        id ivc = [self.navigationController.splitViewController.viewControllers lastObject];
+        if([ivc isKindOfClass:[ImageViewController class]])
+        {
+            NSDictionary *imageObj = [self.images objectAtIndex:indexPath.row];
+            dispatch_queue_t imageQueue = dispatch_queue_create("flickr image download", NULL);
+            dispatch_async(imageQueue, ^{
+                NSURL *url = [FlickrFetcher urlForPhoto:imageObj format:FlickrPhotoFormatLarge];
+                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [ivc setImage:image];
+                    [ivc setTitle:[self titleForImage:imageObj]];
+                });
+            });
+            dispatch_release(imageQueue);
+            [self addToRecentlyViewedItems:imageObj];
+        }
+    }
+}
+
 @end
