@@ -59,7 +59,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="920" y="16"/>
+            <point key="canvasLocation" x="386" y="-230"/>
         </scene>
         <!--Place Images Table View Controller - Images-->
         <scene sceneID="YYY-MZ-4AA">
@@ -108,7 +108,7 @@
                     <navigationItem key="navigationItem" title="Images" id="jsl-Iz-PkA"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1407" y="16"/>
+            <point key="canvasLocation" x="929" y="-230"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="fdY-52-C49">
@@ -148,7 +148,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1841" y="23"/>
+            <point key="canvasLocation" x="1531" y="-230"/>
         </scene>
         <!--Navigation Controller - Top Places-->
         <scene sceneID="A4t-3R-3aV">
@@ -168,7 +168,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="493" y="16"/>
+            <point key="canvasLocation" x="-100" y="-230"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tX6-dx-fQI">
@@ -186,7 +186,7 @@
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-7" y="276"/>
+            <point key="canvasLocation" x="-699" y="130"/>
         </scene>
         <!--Recent Images Table View Controller - Recent Images-->
         <scene sceneID="qCt-oS-MjZ">
@@ -241,7 +241,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1104" y="823"/>
+            <point key="canvasLocation" x="386" y="585"/>
         </scene>
         <!--Navigation Controller - Recently Viewed-->
         <scene sceneID="cVC-1r-dHv">
@@ -260,7 +260,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="673" y="823"/>
+            <point key="canvasLocation" x="-100" y="585"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="sjy-SA-97N">
@@ -300,38 +300,13 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1651" y="823"/>
+            <point key="canvasLocation" x="929" y="585"/>
         </scene>
     </scenes>
     <resources>
         <image name="28-star.png" width="26" height="26"/>
         <image name="42-photos.png" width="22" height="24"/>
     </resources>
-    <classes>
-        <class className="ImageTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageTableViewController.h"/>
-        </class>
-        <class className="ImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="PlaceImagesTableViewController" superclassName="ImageTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceImagesTableViewController.h"/>
-        </class>
-        <class className="PlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlacesTableViewController.h"/>
-        </class>
-        <class className="RecentImagesTableViewController" superclassName="ImageTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentImagesTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="clear" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
