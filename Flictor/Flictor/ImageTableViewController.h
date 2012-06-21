@@ -12,8 +12,4 @@
 
 @interface ImageTableViewController : UITableViewController
 @property (nonatomic,strong) NSArray *images;
-
-- (NSString *) titleForImage:(NSDictionary *)image;
-- (NSString *) descriptionForImage:(NSDictionary *)image;
-
 @end

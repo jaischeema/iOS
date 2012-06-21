@@ -52,60 +52,6 @@
 	return YES;
 }
 
-#define UKNOWN @"Unknown"
-
-
-- (NSString *) descriptionForImage:(NSDictionary *)image
-{
-    NSString *description = [image valueForKeyPath:FLICKR_PHOTO_DESCRIPTION]; 
-    if(!description || [description isEqualToString:@""])
-    {
-        description = nil;
-    }
-    return description;
-}
-
-- (NSString *) titleForImage:(NSDictionary *)image
-{
-    id titleObj = [image objectForKey:FLICKR_PHOTO_TITLE];
-    NSString *title;
-    if (titleObj) {
-        if([titleObj isKindOfClass:[NSString class]])
-        {
-            if([titleObj isEqualToString:@""])
-            {
-                NSString *description = [self descriptionForImage:image];
-                if(description)
-                {
-                    title = description;
-                }
-                else {
-                    title = UKNOWN;
-                }
-            }
-            else {
-                title = (NSString *)titleObj;
-            }
-        }
-        else if ([titleObj isKindOfClass:[NSNumber class]]) {
-            title = [NSString stringWithFormat:@"%g",titleObj];
-        }
-    }
-    else {
-        NSString *description = [self descriptionForImage:image];
-        if(description)
-        {
-            title = description;
-        }
-        else {
-            title = UKNOWN;
-        }
-    }
-    return title;
-}
-
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -123,8 +69,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     id obj = [self.images objectAtIndex:indexPath.row];
-    cell.textLabel.text = [self titleForImage:obj];
-    cell.detailTextLabel.text = [self descriptionForImage:obj];
+    cell.textLabel.text = [FlickrFetcher titleForImage:obj];//[self titleForImage:obj];
+    cell.detailTextLabel.text = [FlickrFetcher subtitleForImage:obj];//[self descriptionForImage:obj];
     return cell;
 }
 

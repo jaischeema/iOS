@@ -10,7 +10,7 @@
 #import "FlickrFetcher.h"
 #import "PlaceImagesTableViewController.h"
 #import "MapViewController.h"
-#import "FlickrAnnotation.h"
+#import "FlickrPlaceAnnotation.h"
 
 @interface PlacesTableViewController ()
 @end
@@ -23,7 +23,7 @@
     NSMutableArray *annotations = [[NSMutableArray alloc] init];
     for(NSDictionary *place in self.topPlaces)
     {
-        [annotations addObject:[FlickrAnnotation annotationForPhoto:place]];
+        [annotations addObject:[FlickrPlaceAnnotation annotationForPlace:place]];
     }
     return annotations;
 }
@@ -85,23 +85,6 @@
 }
 
 
-#pragma mark Custom Methods
-
-- (NSString *) titleFor:(NSString *)description
-{
-    NSArray *chunks = [description componentsSeparatedByString:@","];
-    return [chunks objectAtIndex:0];
-}
-
-- (NSString *) subtitleFor:(NSString *)description
-{
-    NSMutableArray *chunks = [[description componentsSeparatedByString:@","] mutableCopy];
-    [chunks removeObjectAtIndex:0];
-    NSString * firstString = [chunks objectAtIndex:0];
-    [chunks replaceObjectAtIndex:0 withObject:[firstString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
-    return [chunks componentsJoinedByString:@","];
-}
-
 #pragma mark - UITableViewDataSource
 
 
@@ -119,8 +102,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     id obj = [self.topPlaces objectAtIndex:indexPath.row];
-    cell.textLabel.text = [self titleFor:[obj objectForKey:FLICKR_PLACE_NAME]];
-    cell.detailTextLabel.text = [self subtitleFor:[obj objectForKey:FLICKR_PLACE_NAME]];
+    cell.textLabel.text = [FlickrFetcher titleForPlace:obj];
+    cell.detailTextLabel.text = [FlickrFetcher subtitleForPlace:obj];
     return cell;
 }
 

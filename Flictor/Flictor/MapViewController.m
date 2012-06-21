@@ -8,7 +8,7 @@
 
 #import "MapViewController.h"
 #import <MapKit/MapKit.h>
-#import "FlickrAnnotation.h"
+#import "FlickrPlaceAnnotation.h"
 
 @interface MapViewController () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -26,7 +26,7 @@
     {
         [self.mapView addAnnotations:self.annotations];
     }
-    [self.mapView setNeedsDisplay];
+    [self.mapView reloadInputViews];
 }
 
 - (void) setMapView:(MKMapView *)mapView
@@ -42,6 +42,25 @@
     [self updateMapView];
 }
 
+- (IBAction)changeMapType:(id)sender 
+{
+    if([sender isKindOfClass:[UISegmentedControl class]])
+    {        
+        UISegmentedControl *segment = (UISegmentedControl *)sender;
+        if(segment.selectedSegmentIndex == 0)
+        {
+            self.mapView.mapType = MKMapTypeStandard;
+        }
+        else if(segment.selectedSegmentIndex == 1)
+        {
+            self.mapView.mapType = MKMapTypeSatellite;
+        }
+        else if(segment.selectedSegmentIndex == 2)
+        {
+            self.mapView.mapType = MKMapTypeHybrid;
+        }
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -59,10 +78,12 @@
     return YES;
 }
 
+#pragma mark MKMapViewDelegate
+
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     static NSString *identifier = @"Place";
-    if([annotation isKindOfClass:[FlickrAnnotation class]])
+    if([annotation isKindOfClass:[FlickrPlaceAnnotation class]])
     {
         MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         if(!annotationView)

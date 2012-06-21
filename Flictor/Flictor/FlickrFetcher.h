@@ -15,6 +15,8 @@
 #define FLICKR_LATITUDE @"latitude"
 #define FLICKR_LONGITUDE @"longitude"
 
+#define UKNOWN @"Unknown"
+
 typedef enum {
 	FlickrPhotoFormatSquare = 1,
 	FlickrPhotoFormatLarge = 2,
@@ -27,4 +29,9 @@ typedef enum {
 + (NSArray *)photosInPlace:(NSDictionary *)place maxResults:(int)maxResults;
 + (NSURL *)urlForPhoto:(NSDictionary *)photo format:(FlickrPhotoFormat)format;
 
+// Custom Convenience methods
++ (NSString *) titleForPlace:(NSDictionary *)place;
++ (NSString *) subtitleForPlace:(NSDictionary *)place;
++ (NSString *) titleForImage:(NSDictionary *)image;
++ (NSString *) subtitleForImage:(NSDictionary *)image;
 @end

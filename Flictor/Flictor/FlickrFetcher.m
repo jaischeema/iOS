@@ -79,4 +79,71 @@
     return [NSURL URLWithString:[self urlStringForPhoto:photo format:format]];
 }
 
++ (NSString *) titleForPlace:(NSDictionary *)place
+{
+    NSString *description = [place objectForKey:FLICKR_PLACE_NAME];
+    NSArray *chunks = [description componentsSeparatedByString:@","];
+    return [chunks objectAtIndex:0];
+}
+
++ (NSString *) subtitleForPlace:(NSDictionary *)place
+{
+    NSString *description = [place objectForKey:FLICKR_PLACE_NAME];
+    NSMutableArray *chunks = [[description componentsSeparatedByString:@","] mutableCopy];
+    [chunks removeObjectAtIndex:0];
+    NSString * firstString = [chunks objectAtIndex:0];
+    [chunks replaceObjectAtIndex:0 withObject:[firstString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+    return [chunks componentsJoinedByString:@","];
+}
+
++ (NSString *) subtitleForImage:(NSDictionary *)image
+{
+    NSString *description = [image valueForKeyPath:FLICKR_PHOTO_DESCRIPTION]; 
+    if(!description || [description isEqualToString:@""])
+    {
+        description = nil;
+    }
+    return description;
+}
+
+
++ (NSString *) titleForImage:(NSDictionary *)image
+{
+    id titleObj = [image objectForKey:FLICKR_PHOTO_TITLE];
+    NSString *title;
+    if (titleObj) {
+        if([titleObj isKindOfClass:[NSString class]])
+        {
+            if([titleObj isEqualToString:@""])
+            {
+                NSString *description = [self subtitleForImage:image];
+                if(description)
+                {
+                    title = description;
+                }
+                else {
+                    title = UKNOWN;
+                }
+            }
+            else {
+                title = (NSString *)titleObj;
+            }
+        }
+        else if ([titleObj isKindOfClass:[NSNumber class]]) {
+            title = [NSString stringWithFormat:@"%g",titleObj];
+        }
+    }
+    else {
+        NSString *description = [self subtitleForImage:image];
+        if(description)
+        {
+            title = description;
+        }
+        else {
+            title = UKNOWN;
+        }
+    }
+    return title;
+}
+
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230C7DA61592ECFF002DA735 /* FlickrImageAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 230C7DA51592ECFF002DA735 /* FlickrImageAnnotation.m */; };
+		230C7DAA1592ED10002DA735 /* FlickrPlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 230C7DA91592ED10002DA735 /* FlickrPlaceAnnotation.m */; };
 		23162A59158C5A5C0080BE94 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23162A58158C5A5C0080BE94 /* UIKit.framework */; };
 		23162A5B158C5A5C0080BE94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23162A5A158C5A5C0080BE94 /* Foundation.framework */; };
 		23162A5D158C5A5C0080BE94 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23162A5C158C5A5C0080BE94 /* CoreGraphics.framework */; };
@@ -28,11 +30,13 @@
 		23BECC1F1592C1E7005C3E0C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BECC1E1592C1E7005C3E0C /* MapViewController.m */; };
 		23BECC221592C261005C3E0C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BECC201592C261005C3E0C /* CoreLocation.framework */; };
 		23BECC231592C261005C3E0C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BECC211592C261005C3E0C /* MapKit.framework */; };
-		23BECC261592C2EC005C3E0C /* ImageMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BECC251592C2EC005C3E0C /* ImageMapViewController.m */; };
-		23D0B6EF1592D60100FBF0EC /* FlickrAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B6EE1592D60100FBF0EC /* FlickrAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230C7DA41592ECFF002DA735 /* FlickrImageAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrImageAnnotation.h; sourceTree = "<group>"; };
+		230C7DA51592ECFF002DA735 /* FlickrImageAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrImageAnnotation.m; sourceTree = "<group>"; };
+		230C7DA81592ED10002DA735 /* FlickrPlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPlaceAnnotation.h; sourceTree = "<group>"; };
+		230C7DA91592ED10002DA735 /* FlickrPlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPlaceAnnotation.m; sourceTree = "<group>"; };
 		23162A54158C5A5C0080BE94 /* Flictor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flictor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23162A58158C5A5C0080BE94 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		23162A5A158C5A5C0080BE94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,10 +71,6 @@
 		23BECC1E1592C1E7005C3E0C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		23BECC201592C261005C3E0C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		23BECC211592C261005C3E0C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		23BECC241592C2EC005C3E0C /* ImageMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageMapViewController.h; sourceTree = "<group>"; };
-		23BECC251592C2EC005C3E0C /* ImageMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageMapViewController.m; sourceTree = "<group>"; };
-		23D0B6ED1592D60100FBF0EC /* FlickrAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAnnotation.h; sourceTree = "<group>"; };
-		23D0B6EE1592D60100FBF0EC /* FlickrAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,10 +189,10 @@
 			children = (
 				23BECC1D1592C1E7005C3E0C /* MapViewController.h */,
 				23BECC1E1592C1E7005C3E0C /* MapViewController.m */,
-				23BECC241592C2EC005C3E0C /* ImageMapViewController.h */,
-				23BECC251592C2EC005C3E0C /* ImageMapViewController.m */,
-				23D0B6ED1592D60100FBF0EC /* FlickrAnnotation.h */,
-				23D0B6EE1592D60100FBF0EC /* FlickrAnnotation.m */,
+				230C7DA41592ECFF002DA735 /* FlickrImageAnnotation.h */,
+				230C7DA51592ECFF002DA735 /* FlickrImageAnnotation.m */,
+				230C7DA81592ED10002DA735 /* FlickrPlaceAnnotation.h */,
+				230C7DA91592ED10002DA735 /* FlickrPlaceAnnotation.m */,
 			);
 			name = mapvcs;
 			sourceTree = "<group>";
@@ -274,8 +274,8 @@
 				2335D88C1591B21100D08919 /* RecentImagesTableViewController.m in Sources */,
 				23BECC1B1592B264005C3E0C /* PlacesSplitViewController.m in Sources */,
 				23BECC1F1592C1E7005C3E0C /* MapViewController.m in Sources */,
-				23BECC261592C2EC005C3E0C /* ImageMapViewController.m in Sources */,
-				23D0B6EF1592D60100FBF0EC /* FlickrAnnotation.m in Sources */,
+				230C7DA61592ECFF002DA735 /* FlickrImageAnnotation.m in Sources */,
+				230C7DAA1592ED10002DA735 /* FlickrPlaceAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

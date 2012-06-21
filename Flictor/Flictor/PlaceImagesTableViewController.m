@@ -49,7 +49,7 @@
             UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [segue.destinationViewController setImage:image];
-                [segue.destinationViewController setTitle:[self titleForImage:imageObj]];
+                [segue.destinationViewController setTitle:[FlickrFetcher titleForImage:imageObj]];
             });
         });
         dispatch_release(imageQueue);
@@ -71,7 +71,7 @@
                 UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [ivc setImage:image];
-                    [ivc setTitle:[self titleForImage:imageObj]];
+                    [ivc setTitle:[FlickrFetcher titleForImage:imageObj]];
                 });
             });
             dispatch_release(imageQueue);
