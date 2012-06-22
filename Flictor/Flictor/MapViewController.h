@@ -12,7 +12,13 @@
 @class MapViewController;
 
 @protocol MapViewDelegate
+
 - (UIImage *) mapView:(MapViewController *)mapViewController imageForAnnotation:(id <MKAnnotation>)annotation;
+
+@optional
+
+- (void) mapView:(MapViewController *)mapViewController detailedActionForAnnotation:(id <MKAnnotation>) annotation;
+
 @end
 
 @interface MapViewController : UIViewController

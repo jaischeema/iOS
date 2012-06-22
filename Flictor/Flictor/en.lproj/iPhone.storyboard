@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="DxI-H9-dXk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="DxI-H9-dXk">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
         <!--Places Table View Controller - Top Places-->
@@ -56,15 +56,14 @@
                                 <action selector="refresh:" destination="10Z-Zn-wah" id="poW-LC-Zqi"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="jiR-dW-Dw4">
-                            <connections>
-                                <segue destination="JSV-1R-ocZ" kind="push" identifier="ShowPlacesMap" id="nrS-Yx-hYM"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="jiR-dW-Dw4"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="WNv-fI-fwL" kind="push" identifier="ShowPlacesMap" id="n5G-2m-Ldc"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="386" y="-230"/>
+            <point key="canvasLocation" x="-3994" y="-2170"/>
         </scene>
         <!--Place Images Table View Controller - Images-->
         <scene sceneID="YYY-MZ-4AA">
@@ -101,7 +100,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="G8X-D7-H9L" kind="push" identifier="Image" id="wXX-0n-4zR"/>
+                                    <segue destination="gK3-hK-Ojw" kind="push" identifier="Image" id="VAG-Wd-vuh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -116,47 +115,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="929" y="-230"/>
-        </scene>
-        <!--Image View Controller-->
-        <scene sceneID="fdY-52-C49">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UON-9B-aRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="G8X-D7-H9L" customClass="ImageViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xLc-PV-w5J">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.20000000000000001" maximumZoomScale="5" id="gwU-Jl-DkV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="iFc-9F-kkG">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" id="e8C-4P-zSq" customClass="UIActivityIndicatorView">
-                                        <rect key="frame" x="140" y="164" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <connections>
-                                    <outlet property="delegate" destination="G8X-D7-H9L" id="qAx-Y7-I1E"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="8mM-Oa-RD7"/>
-                    <connections>
-                        <outlet property="imageView" destination="iFc-9F-kkG" id="xez-4U-xaa"/>
-                        <outlet property="scrollView" destination="gwU-Jl-DkV" id="v5w-FV-P1a"/>
-                        <outlet property="spinner" destination="e8C-4P-zSq" id="l2L-fo-XCq"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1531" y="-230"/>
+            <point key="canvasLocation" x="-3270" y="-2170"/>
         </scene>
         <!--Navigation Controller - Top Places-->
         <scene sceneID="A4t-3R-3aV">
@@ -176,7 +135,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-100" y="-230"/>
+            <point key="canvasLocation" x="-4480" y="-2170"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tX6-dx-fQI">
@@ -194,7 +153,7 @@
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-699" y="130"/>
+            <point key="canvasLocation" x="-5079" y="-1810"/>
         </scene>
         <!--Recent Images Table View Controller - Recent Images-->
         <scene sceneID="qCt-oS-MjZ">
@@ -252,7 +211,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="386" y="585"/>
+            <point key="canvasLocation" x="-3948" y="-1355"/>
         </scene>
         <!--Navigation Controller - Recently Viewed-->
         <scene sceneID="cVC-1r-dHv">
@@ -271,7 +230,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-100" y="585"/>
+            <point key="canvasLocation" x="-4480" y="-1355"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="sjy-SA-97N">
@@ -311,44 +270,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1531" y="585"/>
-        </scene>
-        <!--Map View Controller-->
-        <scene sceneID="Tmu-OC-Fqc">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="to1-00-tfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="JSV-1R-ocZ" customClass="MapViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="s1I-ZV-GXH">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="pPf-rB-vZ5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </mapView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="vGe-Vh-RKj">
-                                <rect key="frame" x="48" y="311" width="225" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <segments>
-                                    <segment title="Map"/>
-                                    <segment title="Satellite"/>
-                                    <segment title="Hybrid"/>
-                                </segments>
-                                <connections>
-                                    <action selector="changeMapType:" destination="JSV-1R-ocZ" eventType="valueChanged" id="jDe-h5-n0v"/>
-                                </connections>
-                            </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="SZJ-OF-mBM"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <outlet property="mapView" destination="pPf-rB-vZ5" id="e5p-oC-vhE"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="386" y="-961"/>
+            <point key="canvasLocation" x="-2539" y="-2170"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="LHo-ez-2UF">
@@ -385,19 +307,48 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="929" y="585"/>
+            <point key="canvasLocation" x="-2539" y="-1355"/>
         </scene>
     </scenes>
     <resources>
         <image name="28-star.png" width="26" height="26"/>
         <image name="42-photos.png" width="22" height="24"/>
     </resources>
+    <classes>
+        <class className="ImageTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageTableViewController.h"/>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="PlaceImagesTableViewController" superclassName="ImageTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaceImagesTableViewController.h"/>
+        </class>
+        <class className="PlacesTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlacesTableViewController.h"/>
+        </class>
+        <class className="RecentImagesTableViewController" superclassName="ImageTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentImagesTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JUD-jB-E0h"/>
+        <segue reference="Mng-dq-xxR"/>
+        <segue reference="VAG-Wd-vuh"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -45,6 +45,7 @@
     {
         NSIndexPath *path = [self.tableView indexPathForCell:sender];
         NSDictionary *imageObj = [self.images objectAtIndex:path.row];
+        NSLog(@"%@",path);
         dispatch_queue_t imageQueue = dispatch_queue_create("flickr image download", NULL);
         dispatch_async(imageQueue, ^{
             NSURL *url = [FlickrFetcher urlForPhoto:imageObj format:FlickrPhotoFormatLarge];

@@ -44,6 +44,15 @@
     return image;
 }
 
+- (void) mapView:(MapViewController *)mapViewController detailedActionForAnnotation:(id<MKAnnotation>)annotation
+{
+    NSDictionary * image = [(FlickrImageAnnotation *)annotation image];
+    int index = [self.images indexOfObject:image];
+    NSLog(@"%d",index);
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    [self performSegueWithIdentifier:@"Image" sender:cell];
+}
+
 - (void) setImages:(NSArray *)images
 {
     if( _images != images )

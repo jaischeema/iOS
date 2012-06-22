@@ -86,6 +86,7 @@
 {
     static NSString *placeIdentifier = @"Place";
     static NSString *imageIdentifier = @"Image";
+    
     if([annotation isKindOfClass:[FlickrPlaceAnnotation class]])
     {
         MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:placeIdentifier];
@@ -117,6 +118,14 @@
     }
     else {
         return nil;
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    if([control isEqual:view.rightCalloutAccessoryView])
+    {
+        [self.delegate mapView:self detailedActionForAnnotation:view.annotation];
     }
 }
 
