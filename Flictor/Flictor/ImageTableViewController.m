@@ -10,8 +10,9 @@
 #import "FlickrFetcher.h"
 #import "ImageViewController.h"
 #import "MapViewController.h"
+#import "FlickrImageAnnotation.h"
 
-@interface ImageTableViewController ()
+@interface ImageTableViewController () <MapViewDelegate>
 @end
 
 @implementation ImageTableViewController
@@ -29,6 +30,18 @@
         mapButton = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStyleBordered target:self action:@selector(showMapForPhone:)];
     }
     self.navigationItem.rightBarButtonItem = mapButton;
+}
+
+- (UIImage *) mapView:(MapViewController *)mapViewController imageForAnnotation:(id<MKAnnotation>)annotation
+{
+    UIImage *image = nil;
+    if([annotation isKindOfClass:[FlickrImageAnnotation class]])
+    {
+        FlickrImageAnnotation *imageAnnotation = (FlickrImageAnnotation *)annotation;
+        NSURL *imageURL = [FlickrFetcher urlForPhoto:imageAnnotation.image format:FlickrPhotoFormatSquare];
+        image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
+    }
+    return image;
 }
 
 - (void) setImages:(NSArray *)images
@@ -94,13 +107,19 @@
 
 - (NSArray *) annotationsForMap
 {
-    return nil;
+    NSMutableArray *annotations = [[NSMutableArray alloc] initWithCapacity:[self.images count]];
+    for(NSDictionary *image in self.images)
+    {
+        [annotations addObject:[FlickrImageAnnotation annotationForImage:image]];
+    }
+    return annotations;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"ShowImagesMap"])
     {
+        [segue.destinationViewController setDelegate:self];
         [segue.destinationViewController setAnnotations:[self annotationsForMap]];
     }
 }

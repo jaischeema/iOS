@@ -37,8 +37,10 @@
     [defaults synchronize];
 }
 
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [super prepareForSegue:segue sender:sender];
     if([segue.identifier isEqualToString:@"Image"])
     {
         NSIndexPath *path = [self.tableView indexPathForCell:sender];
