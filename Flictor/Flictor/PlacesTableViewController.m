@@ -38,7 +38,6 @@
     }
 }
 
-
 - (void) setTopPlaces:(NSArray *)topPlaces
 {
     if(_topPlaces != topPlaces)
